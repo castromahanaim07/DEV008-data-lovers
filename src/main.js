@@ -1,12 +1,18 @@
 import { example } from './data.js';
-//funcion de data
+//importa funcion de data
 
 import data from './data/ghibli/ghibli.js'; //Importa la data de ghibli y la imprime en consola
-console.log(example, data);
+//console.log(example, data);
+
+//const que guarda la data de Estudio Ghibli//
+const dataGhibli = data;
+console.log(dataGhibli);
+
+const filmsList = document.getElementById("filmsList"); //Lista de animaciones
 
 //Header//
-const buscadorInput = document.getElementById("textInput") //Buscador
-const buscarBtn = document.getElementById("botonBuscar") //Botón buscar
+const buscadorInput = document.getElementById("textInput"); //Buscador
+const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
 
 //Categorías//
 const directoresBtn = document.getElementById("directores"); //Botón directores
@@ -18,3 +24,9 @@ const premiadosBtn = document.getElementById("directores"); //Botón premiados
 
 //Botón Regresar//
 const regresarBtn = document.getElementById("botonReset")
+
+
+//Agregar eventos a los botones
+directoresBtn.addEventListener("click", function () {
+
+})
