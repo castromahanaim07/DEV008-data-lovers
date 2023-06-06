@@ -1,16 +1,19 @@
-import { example } from './data.js';
+import { obtenerPeliculas } from './data.js';
 //importa funcion de data
 
-import data from './data/ghibli/ghibli.js'; //Importa la data de ghibli y la imprime en consola
-//console.log(example, data);
 
 //const que guarda la data de Estudio Ghibli//
-const dataGhibli = data; //OBJETO//
-console.log(dataGhibli);
+const dataFilms = obtenerPeliculas(); //OBJETO//
 
-const dataFilms = data.films; //Animaciones// ARRAY//
-console.log(dataFilms);
+ //function mostrarPeliculas(peliculas){
+//for (let i=0; i < dataFilms.length; i++) 
+//console.log(dataFilms[i]);
+ //}
 
+//const dataFilms = data.films; //Animaciones// ARRAY//
+//console.log(dataFilms);
+const filmsList = document.getElementById("filmsList"); //Lista de animaciones
+const listaPeliculas = document.getElementById("listaPeliculas");
 //Iterar en films para cada categoría// Muestra cada elemento del array
 for (let i=0; i < dataFilms.length; i++) {
   //console.log(dataFilms[i])
@@ -18,28 +21,38 @@ for (let i=0; i < dataFilms.length; i++) {
   //console.log(dataFilms[i].title + ": " + "Director: " + dataDirectors); //Concatena el título de la película con el director
 
   const dataYear = dataFilms[i].release_date; //Año
-  console.log(dataFilms[i].title + ": " + "Año: " + dataYear);
+  //console.log(dataFilms[i].title + ": " + "Año: " + dataYear);
 
   const dataScore = dataFilms[i].rt_score; //Duración
   //console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
-
+  const filmName = dataFilms[i].title;
+  const element = document.createElement("li")
+  element.innerText=dataFilms[i]
+  filmsList.appendChild(element)
+  const imagen = document.createElement("img")
+  imagen.src = dataFilms[i].poster
+  imagen.classList.add("imagen")
+  listaPeliculas.appendChild(imagen)
+  const nombre= document.createElement("h3")
+  nombre.innerText=filmName
+  listaPeliculas.appendChild(nombre)
+  
 }
 
 
-const filmsList = document.getElementById("filmsList"); //Lista de animaciones
-filmsList.innerHTML  //Para mostrar en dcumento//
+
 
 //Header//
 const buscadorInput = document.getElementById("textInput"); //Buscador
 const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
 
-buscadorInput.addEventListener("input", function () {
+//buscadorInput.addEventListener("input", function () {
 
-})
+//})
 
-buscarBtn.addEventListener("input", function () {
+//buscarBtn.addEventListener("input", function () {
 
-})
+//})
 
 
 
