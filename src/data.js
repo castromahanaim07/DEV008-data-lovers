@@ -1,20 +1,15 @@
-// Crear funcion para filtrar directores
-// Crear funcion para filtrar duración
-// Crear funcion para filtrar año
-// Crear funcion para filtrar locaciones
-// Crear funcion para filtrar vehículos
-// Crear funcion para filtrar premiados
+import data from './data/ghibli/ghibli.js';
 
-// Crear funcion para buscador
-
-export const directores = () => {
-
-  return 'directores';
-};
-
-export const filmList = films => {
-  const filmString = createFilmsItems (films)
-  filmList.innerHTML = filmString
+export function obtenerPeliculas() {
+  return data.films;
+  console.log(obtenerPeliculas)
 }
 
-export const createFilmsItems = films => films.map(film => `<li>film.title</li>`.join (" "))
+//export let yearList = films.map (films => "Año: " + films.release_date);
+// console.log (yearList);
+
+//Función para films//
+
+//export const example = () => {
+//return 'example';
+//};
