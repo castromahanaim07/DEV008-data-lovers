@@ -47,6 +47,18 @@ const dataFilms = obtenerPeliculas(); //OBJETO//
 //console.log(dataFilms);
 const filmsList = document.getElementById("filmsList"); //Lista de animaciones
 const listaPeliculas = document.getElementById("listaPeliculas");
+
+//variables de contenedores tarjeta html//
+const tarjetaAnimacion = document.getElementById("tarjetaAnimacion");
+const tituloTarjeta = document.getElementById("tituloTarjeta");
+const descripcionTarjeta = document.getElementById("descripcionTarjeta");
+const imagenTarjeta = document.getElementById("imagenTarjeta");
+const directorTarjeta = document.getElementById("directorTarjeta");
+const productorTarjeta = document.getElementById("productorTarjeta");
+const añoTarjeta = document.getElementById("añoTarjeta");
+const botonPersonajes = document.getElementById("botonPersonajes");
+const duracionTarjeta = document.getElementById("duracionTarjeta");
+
 //Iterar en films para cada categoría// Muestra cada elemento del array
 for (let i=0; i < dataFilms.length; i++) {
   //console.log(dataFilms[i])
