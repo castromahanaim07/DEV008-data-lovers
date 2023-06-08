@@ -33,7 +33,8 @@
 }
 
 .input {
-  color: #000000;;
+  color: #000000;
+  ;
   text-align: center;
   font-size: 22px;
   font-family: Candara;
@@ -60,10 +61,11 @@
   font-family: Candara;
   cursor: pointer;
 }
- button:hover{
-    color: white;
-    transform: scale(1.1);
-  }
+
+button:hover {
+  color: white;
+  transform: scale(1.1);
+}
 
 .container {
   display: flex;
@@ -71,22 +73,48 @@
   align-items: center;
 }
 
-  .btn{
-    margin-inline: 50px;
-    border: none;
-    background: #DBC4B6;
-    color: whitesmoke;
-    font-family: Candara;
-    font-size: 20px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .5s;
-    margin: 15px;
-    
-  }
-  
-  .btn:hover{
-    color: black;
-    transform: scale(1.1);
-  }
+.btn {
+  margin-inline: 50px;
+  border: none;
+  background: #DBC4B6;
+  color: whitesmoke;
+  font-family: Candara;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .5s;
+  margin: 15px;
+
+}
+
+.btn:hover {
+  color: black;
+  transform: scale(1.1);
+}
+
+.contenedorTarjeta {
+  display: flex;
+  width: 525px;
+  height: 344px;
+}
+
+.contenedorImagen {
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  height: 343px;
+
+}
+
+.contenedorTexto {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 265px;
+  height: 343px;
+  padding: 5%;
+
+}
+
+
