@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
 }
 
 .subtitle {
@@ -25,7 +25,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 50px;
+  margin-bottom: 50px;
   margin-bottom: 15px;
   background-color: #ADDFD3;
   min-width: 100vh;
@@ -79,7 +79,7 @@ button:hover {
   background: #DBC4B6;
   color: whitesmoke;
   font-family: Candara;
-  font-size: 20px;
+  font-size: 25px;
   padding: 10px 20px;
   border-radius: 10px;
   cursor: pointer;
@@ -97,6 +97,7 @@ button:hover {
   display: flex;
   width: 522px;
   height: 343px;
+  margin: 20px;
 }
 
 .contenedorImagen {
@@ -111,6 +112,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-family: Candara;
   line-height: 2.5; 
   width: 265px;
   height: 343px;
