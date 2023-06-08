@@ -5,9 +5,9 @@ import { obtenerPeliculas } from './data.js';
 //const que guarda la data de Estudio Ghibli//
 const dataFilms = obtenerPeliculas(); //OBJETO//
 
- //function mostrarPeliculas(peliculas){
+ //function mostrarPeliculas(peliculas){ 
 //for (let i=0; i < dataFilms.length; i++) 
-//console.log(dataFilms[i]);
+//console.log(dataFilms[i]); 
  //}
 
 //const dataFilms = data.films; //Animaciones// ARRAY//
@@ -24,7 +24,7 @@ for (let i=0; i < dataFilms.length; i++) {
   //console.log(dataFilms[i].title + ": " + "Año: " + dataYear);
 
   const dataScore = dataFilms[i].rt_score; //Duración
-  //console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
+  console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
   const filmName = dataFilms[i].title;
   const element = document.createElement("li")
   element.innerText=dataFilms[i]
@@ -36,6 +36,7 @@ for (let i=0; i < dataFilms.length; i++) {
   const nombre= document.createElement("h3")
   nombre.innerText=filmName
   listaPeliculas.appendChild(nombre)
+   
   
 }
 
