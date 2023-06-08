@@ -25,55 +25,56 @@ for (let i = 0; i < dataFilms.length; i++) {
 
   const dataScore = dataFilms[i].rt_score; //Duración
   //console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
+}
 
-  function crearTarjetas(films) {
+function crearTarjetas(films) {
 
-    for (let i = 0; i < films.length; i++) {
+  for (let i = 0; i < films.length; i++) {
 
-      const contenedorTarjetas = document.createElement("div")
-      contenedorTarjetas.classList.add("container")
-      listaPeliculas.appendChild(contenedorTarjetas)
+    const contenedorTarjetas = document.createElement("div")
+    contenedorTarjetas.classList.add("container")
+    listaPeliculas.appendChild(contenedorTarjetas)
 
-      const tarjeta = document.createElement("section")
-      tarjeta.classList.add("contenedorTarjeta")
-      contenedorTarjetas.appendChild(tarjeta)
+    const tarjeta = document.createElement("section")
+    tarjeta.classList.add("contenedorTarjeta")
+    contenedorTarjetas.appendChild(tarjeta)
 
-      const contenedorImagen = document.createElement("section")
-      contenedorImagen.classList.add("contenedorImagen")
-      tarjeta.appendChild(contenedorImagen)
+    const contenedorImagen = document.createElement("section")
+    contenedorImagen.classList.add("contenedorImagen")
+    tarjeta.appendChild(contenedorImagen)
 
-      const imagen = document.createElement("img")
-      imagen.src = films[i].poster
-      contenedorImagen.appendChild(imagen)
+    const imagen = document.createElement("img")
+    imagen.src = films[i].poster
+    contenedorImagen.appendChild(imagen)
 
-      const contenedorTexto = document.createElement("section")
-      contenedorTexto.classList.add("contenedorTexto")
-      tarjeta.appendChild(contenedorTexto)
+    const contenedorTexto = document.createElement("section")
+    contenedorTexto.classList.add("contenedorTexto")
+    tarjeta.appendChild(contenedorTexto)
 
-      const nombre = document.createElement("h2")
-      nombre.innerText = films[i].title;
-      contenedorTexto.appendChild(nombre)
-      const director = document.createElement("p")
-      director.innerText = "Director: " + films[i].director;
-      contenedorTexto.appendChild(director)
-      const productor = document.createElement("p")
-      productor.innerText = "Productor: " + films[i].producer;
-      contenedorTexto.appendChild(productor)
-      const año = document.createElement("p")
-      año.innerText = "Año de lanzamiento: " + films[i].release_date;
-      contenedorTexto.appendChild(año)
-      const duracion = document.createElement("p")
-      duracion.innerText = "Duración: " + films[i].rt_score + " minutos";
-      contenedorTexto.appendChild(duracion)
+    const nombre = document.createElement("h2")
+    nombre.innerText = films[i].title;
+    contenedorTexto.appendChild(nombre)
+    const director = document.createElement("p")
+    director.innerText = "Director: " + films[i].director;
+    contenedorTexto.appendChild(director)
+    const productor = document.createElement("p")
+    productor.innerText = "Productor: " + films[i].producer;
+    contenedorTexto.appendChild(productor)
+    const año = document.createElement("p")
+    año.innerText = "Año de lanzamiento: " + films[i].release_date;
+    contenedorTexto.appendChild(año)
+    const duracion = document.createElement("p")
+    duracion.innerText = "Duración: " + films[i].rt_score + " minutos";
+    contenedorTexto.appendChild(duracion)
 
-      contenedorTexto.appendChild(nombre)
-      contenedorTexto.appendChild(director)
-      contenedorTexto.appendChild(productor)
-      contenedorTexto.appendChild(año)
-      contenedorTexto.appendChild(duracion)
-    }
+    contenedorTexto.appendChild(nombre)
+    contenedorTexto.appendChild(director)
+    contenedorTexto.appendChild(productor)
+    contenedorTexto.appendChild(año)
+    contenedorTexto.appendChild(duracion)
   }
-  crearTarjetas(dataFilms);
+}
+crearTarjetas(dataFilms);
 
 
 //Header//
