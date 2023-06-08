@@ -5,17 +5,24 @@ import { obtenerPeliculas } from './data.js';
 //const que guarda la data de Estudio Ghibli//
 const dataFilms = obtenerPeliculas(); //OBJETO//
 
+<<<<<<< HEAD
  //function mostrarPeliculas(peliculas){ 
 //for (let i=0; i < dataFilms.length; i++) 
 //console.log(dataFilms[i]); 
  //}
+=======
+//function mostrarPeliculas(peliculas){
+//for (let i=0; i < dataFilms.length; i++) 
+//console.log(dataFilms[i]);
+//}
+>>>>>>> b9a6a15b492dce252934f3227fa50c45fc2f886a
 
 //const dataFilms = data.films; //Animaciones// ARRAY//
 //console.log(dataFilms);
 const filmsList = document.getElementById("filmsList"); //Lista de animaciones
 const listaPeliculas = document.getElementById("listaPeliculas");
 //Iterar en films para cada categoría// Muestra cada elemento del array
-for (let i=0; i < dataFilms.length; i++) {
+for (let i = 0; i < dataFilms.length; i++) {
   //console.log(dataFilms[i])
   const dataDirectors = dataFilms[i].director; //Directores
   //console.log(dataFilms[i].title + ": " + "Director: " + dataDirectors); //Concatena el título de la película con el director
@@ -24,6 +31,7 @@ for (let i=0; i < dataFilms.length; i++) {
   //console.log(dataFilms[i].title + ": " + "Año: " + dataYear);
 
   const dataScore = dataFilms[i].rt_score; //Duración
+<<<<<<< HEAD
   console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
   const filmName = dataFilms[i].title;
   const element = document.createElement("li")
@@ -40,7 +48,58 @@ for (let i=0; i < dataFilms.length; i++) {
   
 }
 
+=======
+  //console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
+>>>>>>> b9a6a15b492dce252934f3227fa50c45fc2f886a
 
+  function crearTarjetas(films) {
+
+    for (let i = 0; i < films.length; i++) {
+
+      const contenedorTarjetas = document.createElement("div")
+      contenedorTarjetas.classList.add("container")
+      listaPeliculas.appendChild(contenedorTarjetas)
+
+      const tarjeta = document.createElement("section")
+      tarjeta.classList.add("contenedorTarjeta")
+      contenedorTarjetas.appendChild(tarjeta)
+
+      const contenedorImagen = document.createElement("section")
+      contenedorImagen.classList.add("contenedorImagen")
+      tarjeta.appendChild(contenedorImagen)
+
+      const imagen = document.createElement("img")
+      imagen.src = films[i].poster
+      contenedorImagen.appendChild(imagen)
+
+      const contenedorTexto = document.createElement("section")
+      contenedorTexto.classList.add("contenedorTexto")
+      tarjeta.appendChild(contenedorTexto)
+
+      const nombre = document.createElement("h2")
+      nombre.innerText = films[i].title;
+      contenedorTexto.appendChild(nombre)
+      const director = document.createElement("p")
+      director.innerText = "Director: " + films[i].director;
+      contenedorTexto.appendChild(director)
+      const productor = document.createElement("p")
+      productor.innerText = "Productor: " + films[i].producer;
+      contenedorTexto.appendChild(productor)
+      const año = document.createElement("p")
+      año.innerText = "Año de lanzamiento: " + films[i].release_date;
+      contenedorTexto.appendChild(año)
+      const duracion = document.createElement("p")
+      duracion.innerText = "Duración: " + films[i].rt_score + " minutos";
+      contenedorTexto.appendChild(duracion)
+
+      contenedorTexto.appendChild(nombre)
+      contenedorTexto.appendChild(director)
+      contenedorTexto.appendChild(productor)
+      contenedorTexto.appendChild(año)
+      contenedorTexto.appendChild(duracion)
+    }
+  }
+  crearTarjetas(dataFilms);
 
 
 //Header//
