@@ -95,8 +95,8 @@ button:hover {
 
 .contenedorTarjeta {
   display: flex;
-  width: 525px;
-  height: 344px;
+  width: 522px;
+  height: 343px;
 }
 
 .contenedorImagen {
@@ -111,6 +111,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
+  line-height: 2.5; 
   width: 265px;
   height: 343px;
   padding: 5%;
