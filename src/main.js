@@ -5,17 +5,10 @@ import { obtenerPeliculas } from './data.js';
 //const que guarda la data de Estudio Ghibli//
 const dataFilms = obtenerPeliculas(); //OBJETO//
 
-<<<<<<< HEAD
- //function mostrarPeliculas(peliculas){ 
-//for (let i=0; i < dataFilms.length; i++) 
-//console.log(dataFilms[i]); 
- //}
-=======
 //function mostrarPeliculas(peliculas){
 //for (let i=0; i < dataFilms.length; i++) 
 //console.log(dataFilms[i]);
 //}
->>>>>>> b9a6a15b492dce252934f3227fa50c45fc2f886a
 
 //const dataFilms = data.films; //Animaciones// ARRAY//
 //console.log(dataFilms);
@@ -26,32 +19,13 @@ for (let i = 0; i < dataFilms.length; i++) {
   //console.log(dataFilms[i])
   const dataDirectors = dataFilms[i].director; //Directores
   //console.log(dataFilms[i].title + ": " + "Director: " + dataDirectors); //Concatena el título de la película con el director
-
+  
   const dataYear = dataFilms[i].release_date; //Año
   //console.log(dataFilms[i].title + ": " + "Año: " + dataYear);
 
   const dataScore = dataFilms[i].rt_score; //Duración
-<<<<<<< HEAD
-  console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
-  const filmName = dataFilms[i].title;
-  const element = document.createElement("li")
-  element.innerText=dataFilms[i]
-  filmsList.appendChild(element)
-  const imagen = document.createElement("img")
-  imagen.src = dataFilms[i].poster
-  imagen.classList.add("imagen")
-  listaPeliculas.appendChild(imagen)
-  const nombre= document.createElement("h3")
-  nombre.innerText=filmName
-  listaPeliculas.appendChild(nombre)
-   
-  
-}
-
-=======
   //console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
->>>>>>> b9a6a15b492dce252934f3227fa50c45fc2f886a
-
+ }
   function crearTarjetas(films) {
 
     for (let i = 0; i < films.length; i++) {

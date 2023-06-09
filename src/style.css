@@ -77,36 +77,6 @@ button:hover {
   align-items: center;
 }
 
-<<<<<<< HEAD
-  .btn{
-    margin-inline: 50px;
-    border: none;
-    background: #DBC4B6;
-    color: whitesmoke;
-    font-family: Candara;
-    font-size: 20px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .5s;
-    margin: 15px;
-    
-  }
-  
-  .btn:hover{
-    color: black;
-    transform: scale(1.1);
-  }
-  .imagen{
-    height: 200px;
-    width: 150px;
-    padding: #DBC4B6
-  }
-
-  .{
-
-  }
-=======
 .btn {
   margin-inline: 50px;
   border: none;
@@ -155,4 +125,3 @@ button:hover {
 }
 
 
->>>>>>> b9a6a15b492dce252934f3227fa50c45fc2f886a
