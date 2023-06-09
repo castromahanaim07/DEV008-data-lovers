@@ -99,7 +99,7 @@ button:hover {
 
 .contenedorTarjeta {
   display: flex;
-  width: 522px;
+  width: 762px;
   height: 343px;
   margin: 20px;
 }
@@ -111,16 +111,38 @@ button:hover {
   height: 343px;
 }
 
+.contenedorImagen:hover {
+  transform: scale(1.1);
+}
+
 .contenedorTexto {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-items: center;
   font-family: "Bahnschrift Light";
-  line-height: 2.5; 
-  width: 265px;
+  font-size: 20px;
+  line-height: 2; 
+  width: 505px;
   height: 343px;
   padding: 5%;
 
 }
+.filterContainer {
+  display: flex;
+  align-items: center;
+  font-family: "Bahnschrift Light";
+  line-height: 2.5; 
+  font-size: 25px;
+}
 
+.tarjetaFiltro {
+  line-height: 2.5; 
+  font-size: 25px;
+  font-family: "Bahnschrift Light";
+}
 
+.posterFiltro {
+  width: 240px;
+  height: 323px;
+  margin: 20px;
+}
