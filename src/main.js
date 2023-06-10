@@ -7,6 +7,12 @@ const dataFilms = obtenerPeliculas();
 //const filmsList = document.getElementById("filmsList"); //Lista de animaciones
 const listaPeliculas = document.getElementById("listaPeliculas");
 
+//Categorías//
+const animacionesBtn = document.getElementById("animaciones")//Botón TODAS las animaciones
+const directoresBtn = document.getElementById("directores")//Botón directores
+const duracionBtn = document.getElementById("duracion"); //Botón duración
+const añoBtn = document.getElementById("año"); //Botón año
+
 //FILTRAR POR CATEGORIA//
 function filtrarDirectores(films) {
 
@@ -19,45 +25,68 @@ function filtrarDirectores(films) {
     tarjeta.classList.add("tarjetaFiltro")
     contenedorDirectores.appendChild(tarjeta)
 
-    const imagen = document.createElement("img") // SE AGREGO POSTER EN VEZ DEL TITULO//
-    imagen.classList.add("posterFiltro")
-    imagen.src = films[i].poster
-    tarjeta.appendChild(imagen)
+    const imagen = document.createElement("img");
+    imagen.classList.add("posterFiltro");
+    imagen.src = films[i].poster;
+    tarjeta.appendChild(imagen);
+
+    const contenedorTexto = document.createElement("section")
+    contenedorTexto.classList.add("contenedorTextoFiltro")
+    tarjeta.appendChild(contenedorTexto)
+
+    const nombre = document.createElement("h2")
+    nombre.classList.add("tituloFlitro");
+    nombre.innerText = films[i].title;
+    contenedorTexto.appendChild(nombre);
 
     const director = document.createElement("p")
     director.innerText = "Director: " + films[i].director;
-    contenedorDirectores.appendChild(director)
+    contenedorTexto.appendChild(director)
 
     listaPeliculas.appendChild(contenedorDirectores)
   }
 }
 //filtrarDirectores(dataFilms);
-
+directoresBtn.addEventListener("click", () => {
+  filtrarDirectores(dataFilms)
+});
 
 function filtrarAño(films) {
 
   for (let i = 0; i < films.length; i++) {
 
-    const contenedorAño = document.createElement("div")
-    contenedorAño.classList.add("filterContainer")
+    const contenedorAño = document.createElement("div");
+    contenedorAño.classList.add("filterContainer");
 
-    const tarjeta = document.createElement("section")
-    tarjeta.classList.add("tarjetaFiltro")
-    contenedorAño.appendChild(tarjeta)
+    const tarjeta = document.createElement("section");
+    tarjeta.classList.add("tarjetaFiltro");
+    contenedorAño.appendChild(tarjeta);
 
-    const imagen = document.createElement("img") 
-    imagen.classList.add("posterFiltro")
-    imagen.src = films[i].poster
-    tarjeta.appendChild(imagen)
+    const imagen = document.createElement("img");
+    imagen.classList.add("posterFiltro");
+    imagen.src = films[i].poster;
+    tarjeta.appendChild(imagen);
 
-    const año = document.createElement("p")
+    const contenedorTexto = document.createElement("section")
+    contenedorTexto.classList.add("contenedorTextoFiltro")
+    tarjeta.appendChild(contenedorTexto)
+
+    const nombre = document.createElement("h2")
+    nombre.classList.add("tituloFlitro");
+    nombre.innerText = films[i].title;
+    contenedorTexto.appendChild(nombre);
+
+    const año = document.createElement("p");
     año.innerText = "Año: " + films[i].release_date;
-    contenedorAño.appendChild(año)
+    contenedorTexto.appendChild(año);
 
-    listaPeliculas.appendChild(contenedorAño)
+    listaPeliculas.appendChild(contenedorAño);
   }
 }
 //filtrarAño(dataFilms);
+añoBtn.addEventListener("click", () => {
+  filtrarAño(dataFilms)
+});
 
 function filtrarDuracion(films) {
 
@@ -75,14 +104,26 @@ function filtrarDuracion(films) {
     imagen.src = films[i].poster
     tarjeta.appendChild(imagen)
 
+    const contenedorTexto = document.createElement("section")
+    contenedorTexto.classList.add("contenedorTextoFiltro")
+    tarjeta.appendChild(contenedorTexto)
+
+    const nombre = document.createElement("h2")
+    nombre.classList.add("tituloFlitro");
+    nombre.innerText = films[i].title;
+    contenedorTexto.appendChild(nombre);
+
     const duracion = document.createElement("p")
     duracion.innerText = "Duración: " + films[i].rt_score + " minutos";
-    contenedorDuracion.appendChild(duracion)
+    contenedorTexto.appendChild(duracion)
 
     listaPeliculas.appendChild(contenedorDuracion)
   }
 }
 //filtrarDuracion (dataFilms);
+duracionBtn.addEventListener("click", () => {
+  filtrarDuracion(dataFilms)
+});
 
 //CREAR TARJETAS DE TODAS LAS ANIMACIONES//
 function crearTarjetas(films) {
@@ -132,7 +173,10 @@ function crearTarjetas(films) {
     contenedorTexto.appendChild(duracion)
   }
 }
-crearTarjetas(dataFilms);
+//crearTarjetas(dataFilms);
+animacionesBtn.addEventListener("click", () => {
+  crearTarjetas(dataFilms)
+});
 
 //Header//
 const buscadorInput = document.getElementById("textInput"); //Buscador
@@ -147,13 +191,6 @@ buscarBtn.addEventListener("input", function () {
 })
 
 
-
-//Categorías//
-const directoresBtn = document.getElementById("directores"); //Botón directores
-const duracionBtn = document.getElementById("directores"); //Botón duración
-const añoBtn = document.getElementById("directores"); //Botón año
-//const locacionesBtn = document.getElementById("directores"); //Botón locaciones
-//const vehiculosBtn = document.getElementById("directores"); //Botón vehiculos
 
 //Botón Regresar//
 const regresarBtn = document.getElementById("botonReset")
