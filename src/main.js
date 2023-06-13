@@ -81,9 +81,15 @@ crearTarjetas(dataFilms);
 const buscadorInput = document.getElementById("textInput"); //Buscador
 const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
 
-//buscadorInput.addEventListener("input", function () {
+//buscador
+const buscadorInput = document.getElementById("textInput"); //Buscador
 
-//})
+buscadorInput.addEventListener("keyup", function () {
+  const textoIntroducido = buscadorInput.value;
+  const directoresFiltrados = filtrarDirectores(dataFilms, textoIntroducido)
+  console.log(directoresFiltrados)
+})
+
 
 //buscarBtn.addEventListener("input", function () {
 
