@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <form class="contenedorPagina">
 
   <header class="header">
     <img class="logo" src="ghibli-logo.jpg">
@@ -32,19 +33,24 @@
       <button type="button" class="btn" id="duracion">Duración</button>
       <button type="button" class="btn" id="año">Año</button>
 
+      <section class="container">
+        <input class="button" type="button" id="limparFiltro" value="Limpiar filtro" ></button>
+      </section>
+
     </div>
 
     <div>
       <section class="contenedorLista" id="listaPeliculas">
-        <ul class="list" id="filmsList"></ul>
       </section>
     </div>
 
   </main>
 
-  <footer>
-    <button type="button" class="button" id="botonReset"> Regresar </button>
+  <footer class="container">
+    <button type="button" class="button" id="botonFiltroPrueba" value="Filtrar">Prueba de filtros</button>
   </footer>
+
+</form>
 
 
 
