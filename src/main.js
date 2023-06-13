@@ -1,4 +1,4 @@
-import { obtenerPeliculas } from './data.js';
+import { obtenerPeliculas, filtrarDirectores } from './data.js';
 //importa funcion de data
 
 
