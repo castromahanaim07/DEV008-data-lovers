@@ -181,100 +181,28 @@ animacionesBtn.addEventListener("click", () => {
   animacionesCategoria(dataFilms);
 });
 
-
-//Filtros//
-
-//funcionan//
-// const animacionFiltroTotoro = dataFilms.filter(film => film.title === "My Neighbor Totoro")
-// //console.log(animacionFiltroTotoro);
-
-// const filtroDirectorHayao = dataFilms.filter(film => film.director === "Hayao Miyazaki")
-// //console.log(filtroDirectorHayao);
-
-// const filtroAñoAntiguas = dataFilms.filter(film => film.release_date < 1900) //NO FUNCIONA//
-// console.log(filtroAñoAntiguas);
-
-
-// const directoresFiltrados = dataFilms.filter(film =>
-//   dataFilms.director === director)
-
-//FUNCIONA PERO TIENE DETALLES QUE ARREGLAR//
-// function filtrarDirectores(films) {
-
-//   const filtroHayao = [];
-//   for (let i = 0; i < films.length; i++) {
-//     if (films[i].director === "Hayao Miyazaki") {
-//       filtroHayao.push(dataFilms[i].title)
-//     }
-//   }
-//   listaPeliculas.innerHTML = filtroHayao
-// }
-// filtrarDirectores(dataFilms)
-//console.log(filtrarDirectores(dataFilms))
-
-//PRUEBA 2 - FUNCIONES// funciona :)
-// function filtrarDirectores2(films) {
-
-//   const filtroDirectorHayao = films.filter(film => film.director === "Hayao Miyazaki")
-//   listaPeliculas.innerHTML = filtroDirectorHayao
-//   //console.log(filtroDirectorHayao)
-// }
-//filtrarDirectores2(dataFilms)
-
 //////////FUNCION GENERAL//////////si funciona T.T
 // function filtrarDirectores3(films, director) {
 //   const filtroDirector = films.filter(film => film.director === director)
 //   listaPeliculas.innerHTML = filtroDirector
 // }
 //PRUEBA CON BOTON FILTRAR//
-const filtrarBtn = document.getElementById("botonFiltroPrueba"); //Botón filtrar de prueba
+//const filtrarBtn = document.getElementById("botonFiltroPrueba"); //Botón filtrar de prueba
 
-/////PRUEBA - FILTRAR DIRECTORES - BOTON DE PRUEBA//////// funciona :)
-filtrarBtn.addEventListener("click", function () {
-  document.getElementById('listaPeliculas').innerHTML = '';
-  filtrarDirectores(dataFilms, "Isao Takahata");
-});
-
-
-// function filtrarDuracionAntiguas(films) {
-//   for (let i = 0; i < films.length; i++) {
-//     films.filter(film => films[i].rt_score < 1900)
-//   }  
-// }
-// console.log(filtrarDuracionAntiguas(dataFilms))
-
+// /////PRUEBA - FILTRAR DIRECTORES - BOTON DE PRUEBA//////// funciona :)
+// filtrarBtn.addEventListener("click", function () {
+//   document.getElementById('listaPeliculas').innerHTML = '';
+//   filtrarDirectores(dataFilms, "Isao Takahata");
+// });
 
 //Header//
 const buscadorInput = document.getElementById("textInput"); //Buscador
-//const textoIntroducido = buscadorInput.value;
 
 buscadorInput.addEventListener("keyup", function () {
   const textoIntroducido = buscadorInput.value;
   const directoresFiltrados = filtrarDirectores(dataFilms, textoIntroducido)
   console.log(directoresFiltrados)
 })
-
- 
-
-/////PRUEBA - BUSCADOR - FILTRAR////// falta comprobar
-// function filtrarBuscador(textoInput, tituloFilm) {
-//   const textoFiltrar = textoInput.filter(film => film.title === tituloFilm)
-//   const resultado = document.createElement("h2")
-//   resultado.innerText = textoFiltrar;
-//   listaPeliculas.appendChild(resultado)
-// }
-
-/////NO funciona//
-// filtrarBtn.addEventListener("click", function () {
-//   document.getElementById('listaPeliculas').innerHTML = '';
-//   filtrarBuscador(textoIntroducido, "My Neighbor Totoro");
-// });
-
-
-//const animacionFiltroTotoro = dataFilms.filter(film => film.title === "My Neighbor Totoro")
-//console.log(animacionFiltroTotoro);
-
-//const textoIntroducido = buscadorInput.value;
 
 const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
 
@@ -288,25 +216,3 @@ const limpiarBtn = document.getElementById("limparFiltro");
 limpiarBtn.addEventListener("click", () => {
   document.getElementById('listaPeliculas').innerHTML = '';
 });
-
-//Botón Regresar//
-// const regresarBtn = document.getElementById("Inicio")
-
-// regresarBtn.addEventListener("click", function () {
-
-// })
-
-//ITERAR//
-
-//Iterar en films para cada categoría// Muestra cada elemento del array
-for (let i = 0; i < dataFilms.length; i++) {
-  //console.log(dataFilms[i])
-  // const dataDirectors = dataFilms[i].director; //Directores
-  // //console.log(dataFilms[i].title + ": " + "Director: " + dataDirectors); //Concatena el título de la película con el director
-
-  // const dataYear = dataFilms[i].release_date; //Año
-  // //console.log(dataFilms[i].title + ": " + "Año: " + dataYear);
-
-  // const dataScore = dataFilms[i].rt_score; //Duración
-  //console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
-}
