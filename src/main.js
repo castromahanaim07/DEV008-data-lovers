@@ -26,6 +26,7 @@ for (let i = 0; i < dataFilms.length; i++) {
   const dataScore = dataFilms[i].rt_score; //Duración
   //console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
  }
+
   function crearTarjetas(films) {
 
     for (let i = 0; i < films.length; i++) {
@@ -77,11 +78,29 @@ for (let i = 0; i < dataFilms.length; i++) {
 
 
 //Header//
-const buscadorInput = document.getElementById("textInput"); //Buscador
+const buscadorInput = document.getElementById("animaciones"); //Buscador
 const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
 
 //buscadorInput.addEventListener("input", function () {
+  
+  buscadorInput.addEventListener("keyup", e =>{
+    const textoIntroducido = buscadorInput.value 
+    
+    console.log (e.target.matches(textoIntroducido))
+     if(e.target.matches(textoIntroducido)) {
+      console.log(textoIntroducido)
 
+     }
+    //document.querySelector("films").forEach( tarjeta => {
+    //console.log(tarjeta);
+    //let contenedores = [contenedorImagen, contenedorTarjeta, contenedorTexto];
+    //films.filter()
+    // });
+    })    
+
+  
+ const animacion = dataFilms.filter(film => film.length)
+  
 //})
 
 //buscarBtn.addEventListener("input", function () {
