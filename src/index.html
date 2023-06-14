@@ -9,66 +9,48 @@
 </head>
 
 <body>
+  <form class="contenedorPagina">
 
   <header class="header">
-    <h1 class="title">Estudios Ghibli</h1>
+    <img class="logo" src="ghibli-logo.jpg">
+    <h1 class="title">Estudio Ghibli</h1>
 
     <h2 class="subtitle">D A T A - L O V E R S</h2>
+
   </header>
 
   <nav class="searchContainer">
-    <input type="text" placeholder="Buscador" class="input" id="animaciones"></input>
+    <input type="text" placeholder="Buscador" class="input" id="textInput"></input>
     <button type="button" class="button" id="botonBuscar"> Buscar </button>
-    <ul id="resultado">
-
-    </ul>
   </nav>
 
   <main class="container">
     <div class="categoriesContainer">
-
       <h3 class="subtitle">--Seleccione una categoría--</h3>
 
-      <button class="btn" id="directores">Directores</button>
-      <button class="btn" id="duracion">Duración</button>
-      <button class="btn" id="año">Año</button>
-      <button class="btn" id="locaciones">Locaciones</button>
-      <button class="btn" id="vehiculos">Vehículos</button>
-      <button class="btn" id="premiados">Premiados ☆</button>
+      <button type="button" class="btn" id="animaciones">Animaciones</button>
+      <button type="button" class="btn" id="directores">Directores</button>
+      <button type="button" class="btn" id="duracion">Duración</button>
+      <button type="button" class="btn" id="año">Año</button>
+
+      <section class="container">
+        <button type="button" class="button" id="limparFiltro" >Limpiar filtro</button>
+      </section>
 
     </div>
 
-    <article>
+    <div>
       <section class="contenedorLista" id="listaPeliculas">
-        <ul class="list" id="filmsList"> Animaciones </ul>
-
       </section>
-    </article>
-
-    <article class="contenedorTarjeta" id="tarjetaAnimacion">
-      <aside class="contenedorImagen" id="imagenTarjeta"></aside>
-      <section class="contenedorTitulo" id="tituloTarjeta"></section>
-      <section class="contenedorTexto" id="descripcionTarjeta"></section>
-      <section class="contenedorTexto" id="directorTarjeta"></section>
-      <section class="contenedorTexto" id="productorTarjeta"></section>
-      <section class="contenedorTexto" id="añoTarjeta"></section>
-      <section class="contenedorTexto" id="duracionTarjeta"></section>
-      <section class="contenedorBoton" id="btnPersonajesTarjeta"> 
-         <button type="button" class="button" id="botonPersonajes"> Personajes </button>
-      </section>
-    </article>
-
-
-
-
+    </div>
 
   </main>
 
-  <footer>
-    <button type="button" class="button" id="botonReset"> Regresar </button>
+  <footer class="container">
+    <button type="button" class="button" id="botonIrArriba" >Ir arriba</button>
   </footer>
 
-
+</form>
 
 
 
