@@ -1,33 +1,143 @@
 import { obtenerPeliculas, filtrarDirectores } from './data.js';
-//importa funcion de data
 
+const dataFilms = obtenerPeliculas();
 
-//const que guarda la data de Estudio Ghibli//
-const dataFilms = obtenerPeliculas(); //OBJETO//
-
-//function mostrarPeliculas(peliculas){
-//for (let i=0; i < dataFilms.length; i++) 
-//console.log(dataFilms[i]);
-//}
-
-//const dataFilms = data.films; //Animaciones// ARRAY//
-//console.log(dataFilms);
-const filmsList = document.getElementById("filmsList"); //Lista de animaciones
+//Contenedor de resultador//
 const listaPeliculas = document.getElementById("listaPeliculas");
-//Iterar en films para cada categoría// Muestra cada elemento del array
-for (let i = 0; i < dataFilms.length; i++) {
-  //console.log(dataFilms[i])
-  const dataDirectors = dataFilms[i].director; //Directores
-  //console.log(dataFilms[i].title + ": " + "Director: " + dataDirectors); //Concatena el título de la película con el director
 
-  const dataYear = dataFilms[i].release_date; //Año
-  //console.log(dataFilms[i].title + ": " + "Año: " + dataYear);
+//Categorías//
+const animacionesBtn = document.getElementById("animaciones")//Botón TODAS las animaciones
+const directoresBtn = document.getElementById("directores")//Botón directores
+const duracionBtn = document.getElementById("duracion"); //Botón duración
+const añoBtn = document.getElementById("año"); //Botón año
 
-  const dataScore = dataFilms[i].rt_score; //Duración
-  //console.log(dataFilms[i].title + ": " + "Duración: " + dataScore + " minutos");
+//FILTRAR POR CATEGORIA//
+function categoriaDirectores(films) {
+
+  for (let i = 0; i < films.length; i++) {
+
+    const contenedorTarjetas = document.createElement("div")
+    contenedorTarjetas.classList.add("container")
+    listaPeliculas.appendChild(contenedorTarjetas)
+
+    const tarjeta = document.createElement("section")
+    tarjeta.classList.add("contenedorTarjeta")
+    contenedorTarjetas.appendChild(tarjeta)
+
+    const contenedorImagen = document.createElement("section")
+    contenedorImagen.classList.add("contenedorImagen")
+    tarjeta.appendChild(contenedorImagen)
+
+    const imagen = document.createElement("img")
+    imagen.src = films[i].poster
+    contenedorImagen.appendChild(imagen)
+
+    const contenedorTexto = document.createElement("section")
+    contenedorTexto.classList.add("contenedorTexto")
+    tarjeta.appendChild(contenedorTexto)
+
+    const nombre = document.createElement("h2")
+    nombre.innerText = films[i].title;
+    contenedorTexto.appendChild(nombre)
+    const director = document.createElement("p")
+    director.innerText = "Director: " + films[i].director;
+    contenedorTexto.appendChild(director)
+
+    contenedorTexto.appendChild(nombre)
+    contenedorTexto.appendChild(director)
+  }
 }
+//categoriaDirectores(dataFilms);
+directoresBtn.addEventListener("click", () => {
+  document.getElementById('listaPeliculas').innerHTML = '';
+  categoriaDirectores(dataFilms)
+});
 
-function crearTarjetas(films) {
+function categoriaAño(films) {
+
+  for (let i = 0; i < films.length; i++) {
+
+    const contenedorTarjetas = document.createElement("div")
+    contenedorTarjetas.classList.add("container")
+    listaPeliculas.appendChild(contenedorTarjetas)
+
+    const tarjeta = document.createElement("section")
+    tarjeta.classList.add("contenedorTarjeta")
+    contenedorTarjetas.appendChild(tarjeta)
+
+    const contenedorImagen = document.createElement("section")
+    contenedorImagen.classList.add("contenedorImagen")
+    tarjeta.appendChild(contenedorImagen)
+
+    const imagen = document.createElement("img")
+    imagen.src = films[i].poster
+    contenedorImagen.appendChild(imagen)
+
+    const contenedorTexto = document.createElement("section")
+    contenedorTexto.classList.add("contenedorTexto")
+    tarjeta.appendChild(contenedorTexto)
+
+    const nombre = document.createElement("h2")
+    nombre.innerText = films[i].title;
+    contenedorTexto.appendChild(nombre)
+    const año = document.createElement("p")
+    año.innerText = "Año de lanzamiento: " + films[i].release_date;
+    contenedorTexto.appendChild(año)
+
+    contenedorTexto.appendChild(nombre)
+    contenedorTexto.appendChild(año)
+  }
+}
+//categoriaAño(dataFilms);
+añoBtn.addEventListener("click", () => {
+  document.getElementById('listaPeliculas').innerHTML = '';
+  categoriaAño(dataFilms)
+});
+
+function categoriaDuracion(films) {
+
+  for (let i = 0; i < films.length; i++) {
+
+    const contenedorTarjetas = document.createElement("div")
+    contenedorTarjetas.classList.add("container")
+    listaPeliculas.appendChild(contenedorTarjetas)
+
+    const tarjeta = document.createElement("section")
+    tarjeta.classList.add("contenedorTarjeta")
+    contenedorTarjetas.appendChild(tarjeta)
+
+    const contenedorImagen = document.createElement("section")
+    contenedorImagen.classList.add("contenedorImagen")
+    tarjeta.appendChild(contenedorImagen)
+
+    const imagen = document.createElement("img")
+    imagen.src = films[i].poster
+    contenedorImagen.appendChild(imagen)
+
+    const contenedorTexto = document.createElement("section")
+    contenedorTexto.classList.add("contenedorTexto")
+    tarjeta.appendChild(contenedorTexto)
+
+    const nombre = document.createElement("h2")
+    nombre.innerText = films[i].title;
+    contenedorTexto.appendChild(nombre)
+    const duracion = document.createElement("p");
+    duracion.innerText = "Duración: " + films[i].rt_score + " minutos";
+    contenedorTexto.appendChild(duracion)
+
+    contenedorTexto.appendChild(nombre)
+    contenedorTexto.appendChild(duracion)
+  }
+}
+//categoriaDuracion (dataFilms);
+duracionBtn.addEventListener("click", () => {
+  document.getElementById('listaPeliculas').innerHTML = '';
+  categoriaDuracion(dataFilms)
+});
+
+
+//CREAR TARJETAS DE TODAS LAS ANIMACIONES//
+const animacionesTarjeta = function (films) {
 
   for (let i = 0; i < films.length; i++) {
 
@@ -74,14 +184,13 @@ function crearTarjetas(films) {
     contenedorTexto.appendChild(duracion)
   }
 }
-crearTarjetas(dataFilms);
-
+animacionesTarjeta(dataFilms);
+animacionesBtn.addEventListener("click", () => {
+  document.getElementById('listaPeliculas').innerHTML = '';
+  animacionesTarjeta(dataFilms);
+});
 
 //Header//
-const buscadorInput = document.getElementById("textInput"); //Buscador
-const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
-
-//buscador
 const buscadorInput = document.getElementById("textInput"); //Buscador
 
 buscadorInput.addEventListener("keyup", function () {
@@ -90,49 +199,19 @@ buscadorInput.addEventListener("keyup", function () {
   console.log(directoresFiltrados)
 })
 
+const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
 
-//buscarBtn.addEventListener("input", function () {
-
-//})
-
-
-
-//Categorías//
-const directoresBtn = document.getElementById("directores"); //Botón directores
-const duracionBtn = document.getElementById("directores"); //Botón duración
-const añoBtn = document.getElementById("directores"); //Botón año
-const locacionesBtn = document.getElementById("directores"); //Botón locaciones
-const vehiculosBtn = document.getElementById("directores"); //Botón vehiculos
-const premiadosBtn = document.getElementById("directores"); //Botón premiados
-
-//Botón Regresar//
-const regresarBtn = document.getElementById("botonReset")
-
-regresarBtn.addEventListener("click", function () {
+buscarBtn.addEventListener("input", function () {
 
 })
 
-//Agregar eventos a los botones de categorías
-directoresBtn.addEventListener("click", () => {
+//Botón limpiar filtro //
+const limpiarBtn = document.getElementById("limparFiltro");
 
-})
+limpiarBtn.addEventListener("click", () => {
+  document.getElementById('listaPeliculas').innerHTML = ''; //Modificar para que salgan las tarjetas y no vacío//
+});
 
-duracionBtn.addEventListener("click", function () {
-
-})
-
-añoBtn.addEventListener("click", function () {
-
-})
-
-locacionesBtn.addEventListener("click", function () {
-
-})
-
-vehiculosBtn.addEventListener("click", function () {
-
-})
-
-premiadosBtn.addEventListener("click", function () {
-
-})
+//Botón Ir arriba//
+const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
+console.log(arribaBtn)
