@@ -8,7 +8,3 @@ export function filtrarDirectores(films, director) {
   const filtroDirector = films.filter(film => film.director === director)
   return filtroDirector
 }
-
-//export const example = () => {
-//return 'example';
-//}
