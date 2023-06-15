@@ -62,25 +62,25 @@ const añoBtn = document.getElementById("año"); //Botón año
 
 
 //Header//
-const buscadorInput = document.getElementById("animaciones"); //Buscador
-const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
+//const buscadorInput = document.getElementById("animaciones"); //Buscador
+//const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
 
 //buscadorInput.addEventListener("input", function () {
   
-  buscadorInput.addEventListener("keyup", e =>{
-    const textoIntroducido = buscadorInput.value 
+  //buscadorInput.addEventListener("keyup", e =>{
+    //const textoIntroducido = buscadorInput.value 
     
-    console.log (e.target.matches(textoIntroducido))
-     if(e.target.matches(textoIntroducido)) {
-      console.log(textoIntroducido)
+    //console.log (e.target.matches(textoIntroducido))
+     //if(e.target.matches(textoIntroducido)) {
+     // console.log(textoIntroducido)
 
-     }
+     //}
     //document.querySelector("films").forEach( tarjeta => {
     //console.log(tarjeta);
     //let contenedores = [contenedorImagen, contenedorTarjeta, contenedorTexto];
     //films.filter()
     // });
-    })    
+   // })    
 
   
  const animacion = dataFilms.filter(film => film.length)
