@@ -64,6 +64,7 @@
   font-size: 20px;
   font-family: Candara;
   cursor: pointer;
+  margin: 5px;
 }
 
 button:hover {
@@ -85,7 +86,7 @@ button:hover {
   font-family: Candara;
   font-size: 25px;
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   transition: .5s;
   margin: 15px;
@@ -93,7 +94,7 @@ button:hover {
 }
 
 .btn:hover {
-  color: black;
+  color: rgb(104, 54, 0);
   transform: scale(1.1);
 }
 
@@ -102,8 +103,8 @@ button:hover {
   transform: translate(15px);
   box-shadow: 0 12px 16px rgba (0, 0, 0, 0.2);
   display: flex;
-  width: 522px;
-  height: 343px;
+  width: 862px;
+  height: 393px;
   margin: 20px;
   overflow: hidden;
   transition: all 0.25s;
@@ -116,10 +117,11 @@ button:hover {
   display: flex;
   justify-content: center;
   width: 260px;
-  height: 343px;
-  background-color: #F1A19F;
-  border-radius: inherit;
-  overflow: hidden; 
+  height: 363px;
+}
+
+.contenedorImagen:hover {
+  transform: scale(1.1);
 }
 
 .contenedorTexto {
@@ -130,17 +132,11 @@ button:hover {
   border-left: 3px double #F1A19F;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-items: center;
   font-family: "Bahnschrift Light";
-  font-style: oblique;
-  line-height: 2.5; 
-  width: 265px;
-  height: 343px;
+  font-size: 25px;
+  line-height: 2; 
+  width: 605px;
+  height: 393px;
   padding: 5%;
-
 }
-
-.filter{
-  display: none;
-}
-
