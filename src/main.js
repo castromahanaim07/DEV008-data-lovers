@@ -10,6 +10,7 @@ const animacionesBtn = document.getElementById("animaciones")//Botón TODAS las 
 const directoresBtn = document.getElementById("directores")//Botón directores
 const duracionBtn = document.getElementById("duracion"); //Botón duración
 const añoBtn = document.getElementById("año"); //Botón año
+
 //FILTRAR POR CATEGORIA//
 function categoriaDirectores(films) {
 
@@ -134,6 +135,7 @@ duracionBtn.addEventListener("click", () => {
   categoriaDuracion(dataFilms)
 });
 
+
 //CREAR TARJETAS DE TODAS LAS ANIMACIONES//
 const animacionesTarjeta = function (films) {
 
@@ -194,15 +196,9 @@ const buscadorInput = document.getElementById("textInput"); //Buscador
 buscadorInput.addEventListener("keyup", function () {
   const textoIntroducido = buscadorInput.value;
   const tituloFiltrado = filtrarTitulo(dataFilms, textoIntroducido)
-  console.log(tituloFiltrado)
-})
-//console.log (e.target.matches(textoIntroducido))
-
-buscarBtn.addEventListener("click", function () {
-  const textoIntroducido = buscadorInput.value;
-  const directoresFiltrados = filtrarDirectores(dataFilms, textoIntroducido)
   document.getElementById('listaPeliculas').innerHTML = '';
-  animacionesTarjeta(directoresFiltrados);
+  animacionesTarjeta(tituloFiltrado);
+  console.log(tituloFiltrado)
 })
 
 //Botón limpiar filtro //
