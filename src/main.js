@@ -62,30 +62,10 @@ const añoBtn = document.getElementById("año"); //Botón año
 
 
 // //Prueba Mana//
-// const buscadorInput = document.getElementById("animaciones"); //Buscador
-// const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
-
-// //buscadorInput.addEventListener("input", function () {
-
-//   buscadorInput.addEventListener("keyup", e =>{
-//     const textoIntroducido = buscadorInput.value 
-
 //     console.log (e.target.matches(textoIntroducido))
 //      if(e.target.matches(textoIntroducido)) {
 //       console.log(textoIntroducido)
-
 //      }
-//document.querySelector("films").forEach( tarjeta => {
-//console.log(tarjeta);
-//let contenedores = [contenedorImagen, contenedorTarjeta, contenedorTexto];
-//films.filter()
-// });
-// })    
-
-
-const animacion = dataFilms.filter(film => film.length)
-
-//})
 
 //FILTRAR POR CATEGORIA//
 function categoriaDirectores(films) {
@@ -285,7 +265,8 @@ buscarBtn.addEventListener("input", function () {
 const limpiarBtn = document.getElementById("limparFiltro");
 
 limpiarBtn.addEventListener("click", () => {
-  document.getElementById('listaPeliculas').innerHTML = ''; //Modificar para que salgan las tarjetas y no vacío//
+  document.getElementById('listaPeliculas').innerHTML = '';
+  animacionesTarjeta(dataFilms);
 });
 
 //Botón Ir arriba//

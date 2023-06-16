@@ -10,6 +10,16 @@
   align-items: center;
   margin: 10px;
 }
+
+.logo{
+  width: 674px;
+  height: 351px;
+  margin-bottom: 1%;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+
 .title{
   margin-top: 10px;
   font-family: "Bahnschrift Light";
@@ -148,7 +158,7 @@ button:hover {
 }
 
 .menuFiltro:hover {
-  box-shadow: 2px 2px 2px 1px rgba(132, 132, 131, 0.704);
+  box-shadow: 2px 2px 2px 1px rgba(158, 158, 156, 0.704);
 }
 
 .label {
