@@ -9,9 +9,10 @@ export function filtrarDirectores(films, director) {
   return filtroDirector
 }
 
+
 export function filtrarTitulo(films, titulo) {
   const filtroTitulo = films.filter(film => film.title.includes(titulo))
   return filtroTitulo
 }
-
+ 
 
