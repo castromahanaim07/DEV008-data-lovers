@@ -1,4 +1,4 @@
-import { obtenerPeliculas, filtrarDirectores } from './data.js';
+import { obtenerPeliculas, filtrarDirectores,filtrarTitulo} from './data.js';
 
 const dataFilms = obtenerPeliculas();
 
@@ -10,13 +10,6 @@ const animacionesBtn = document.getElementById("animaciones")//Botón TODAS las 
 const directoresBtn = document.getElementById("directores")//Botón directores
 const duracionBtn = document.getElementById("duracion"); //Botón duración
 const añoBtn = document.getElementById("año"); //Botón año
-
-// //Prueba Mana//
-//     console.log (e.target.matches(textoIntroducido))
-//      if(e.target.matches(textoIntroducido)) {
-//       console.log(textoIntroducido)
-//      }
-
 //FILTRAR POR CATEGORIA//
 function categoriaDirectores(films) {
 
@@ -141,7 +134,6 @@ duracionBtn.addEventListener("click", () => {
   categoriaDuracion(dataFilms)
 });
 
-
 //CREAR TARJETAS DE TODAS LAS ANIMACIONES//
 const animacionesTarjeta = function (films) {
 
@@ -201,11 +193,10 @@ const buscadorInput = document.getElementById("textInput"); //Buscador
 
 buscadorInput.addEventListener("keyup", function () {
   const textoIntroducido = buscadorInput.value;
-  const directoresFiltrados = filtrarDirectores(dataFilms, textoIntroducido)
-  console.log(directoresFiltrados)
+  const tituloFiltrado = filtrarTitulo(dataFilms, textoIntroducido)
+  console.log(tituloFiltrado)
 })
-
-const buscarBtn = document.getElementById("botonBuscar"); //Botón buscar
+//console.log (e.target.matches(textoIntroducido))
 
 buscarBtn.addEventListener("click", function () {
   const textoIntroducido = buscadorInput.value;
