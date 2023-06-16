@@ -13,9 +13,8 @@
 
   <header class="header">
     <img class="logo" src="ghibli-logo.jpg">
-    <h1 class="title">Estudio Ghibli</h1>
 
-    <h2 class="subtitle">D A T A - L O V E R S</h2>
+    <h1 class="subtitle">D A T A - L O V E R S</h1>
 
   </header>
 
@@ -37,13 +36,15 @@
         <button type="button" class="button" id="limparFiltro" >Limpiar filtro</button>
       </section>
 
-      <label for="Destacada">Filtro de informacion Destacada:</label>
-      <select name="filterInformacion" id="filterInformacion">
-      <option value="peliculasRecientes">Peliculas Recientes</option>
-      <option value="DirectoresMasPeliculas">Directores de mas Peliculas</option>
-      <option value="peliculas+de90">Peliculas mas de 90 minutos</option>
-      <option value="peliculas-de90">Peliculas menos de 90 minutos</option>
+      <section>
+      <label class="label" for="Destacada">Filtrar por:</label>
+      <select class="menuFiltro"  id="filterInformacion">
+      <option id="peliculasRecientes">Peliculas Recientes</option>
+      <option id="DirectoresMasPeliculas">Directores de mas Peliculas</option>
+      <option id="peliculas+de90">Peliculas mas de 90 minutos</option>
+      <option id="peliculas-de90">Peliculas menos de 90 minutos</option>
       </select>
+      </section>
 
     </div>
 
