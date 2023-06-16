@@ -125,11 +125,6 @@ button:hover {
 }
 
 .contenedorTexto {
-  
-  border-top: 3px double #F1A19F;
-  border-right: 3px double #F1A19F;
-  border-bottom: 3px double #F1A19F;
-  border-left: 3px double #F1A19F;
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -140,3 +135,25 @@ button:hover {
   height: 393px;
   padding: 5%;
 }
+
+.menuFiltro{
+  border: 0;
+  padding: 6px 18px;
+  border-radius: 3px;
+  background-color: #DBC4B6;
+  color: white;
+  font-size: 20px;
+  font-family: Candara;
+  margin: 25px;
+}
+
+.menuFiltro:hover {
+  box-shadow: 2px 2px 2px 1px rgba(132, 132, 131, 0.704);
+}
+
+.label {
+  font-family: Candara;
+  color: #555353;
+  font-size: 25px;
+}
+
