@@ -14,5 +14,15 @@ export function filtrarTitulo(films, titulo) {
   const filtroTitulo = films.filter(film => film.title.includes(titulo))
   return filtroTitulo
 }
- 
 
+export function filtrarAño(films, año) {
+  const filtroAño = films.filter(film => film.release_date.includes(año))
+  return filtroAño
+}
+
+export function añoFilms(films) {
+  for (let i = 0; i < films.length; i++) {
+    const dataAño = films[i].release_date;
+    return dataAño
+  }
+}
