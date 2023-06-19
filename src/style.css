@@ -113,7 +113,7 @@ button:hover {
   transform: translate(15px);
   box-shadow: 0 12px 16px rgba (0, 0, 0, 0.2);
   display: flex;
-  width: 862px;
+  width: 962px;
   height: 393px;
   margin: 20px;
   overflow: hidden;
@@ -141,7 +141,7 @@ button:hover {
   font-family: "Bahnschrift Light";
   font-size: 25px;
   line-height: 2; 
-  width: 605px;
+  width: 705px;
   height: 393px;
   padding: 5%;
 }
@@ -166,4 +166,5 @@ button:hover {
   color: #555353;
   font-size: 25px;
 }
+
 
