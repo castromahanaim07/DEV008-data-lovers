@@ -3,6 +3,9 @@ import data from './data/ghibli/ghibli.js';
 export function obtenerPeliculas() {
   return data.films;
 }
+export function obtenerAño(films) {
+  return films.release_date;
+}
 
 export function filtrarDirectores(films, director) {
   const filtroDirector = films.filter(film => film.director === director)
@@ -15,14 +18,18 @@ export function filtrarTitulo(films, titulo) {
   return filtroTitulo
 }
 
-export function filtrarAño(films, año) {
-  const filtroAño = films.filter(film => film.release_date.includes(año))
-  return filtroAño
+export function filtrarMasRecientes(films) {
+  const filtroMasRecientes = films.filter(film => film.release_date >= 2000)
+  return filtroMasRecientes;
 }
 
-export function añoFilms(films) {
-  for (let i = 0; i < films.length; i++) {
-    const dataAño = films[i].release_date;
-    return dataAño
-  }
+export function filtrarRecientes(films) {
+  const filtroRecientes = films.filter(film => film.release_date >= 1990 && film.release_date < 2000)
+  return filtroRecientes;
 }
+
+export function filtrarMenosRecientes(films) {
+  const filtroRecientes = films.filter(film => film.release_date >= 1980 && film.release_date < 1990)
+  return filtroRecientes;
+}
+
