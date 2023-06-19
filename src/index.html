@@ -11,54 +11,58 @@
 <body>
   <form class="contenedorPagina">
 
-  <header class="header">
-    <img class="logo" src="ghibli-logo.jpg">
+    <header class="header">
+      <img class="logo" src="ghibli-logo.jpg">
 
-    <h1 class="subtitle">D A T A - L O V E R S</h1>
+      <h1 class="subtitle">D A T A - L O V E R S</h1>
 
-  </header>
+    </header>
 
-  <nav class="searchContainer">
-    <input type="text" placeholder="Buscador" class="input" id="textInput"></input>
-  </nav>
+    <nav class="searchContainer">
+      <input type="text" placeholder="Buscador" class="input" id="textInput"></input>
+    </nav>
 
-  <main class="container">
-    <div class="categoriesContainer">
-      <h3 class="subtitle">--Seleccione una categoría--</h3>
+    <main class="container">
+      <div class="categoriesContainer">
+        <h3 class="subtitle">--Seleccione una categoría--</h3>
 
-      <button type="button" class="btn" id="animaciones">Animaciones</button>
-      <button type="button" class="btn" id="directores">Directores</button>
-      <button type="button" class="btn" id="duracion">Duración</button>
-      <button type="button" class="btn" id="año">Año</button>
+        <button type="button" class="btn" id="animaciones">Animaciones</button>
+        <button type="button" class="btn" id="directores">Directores</button>
+        <button type="button" class="btn" id="duracion">Duración</button>
+        <button type="button" class="btn" id="año">Año</button>
 
-      <section class="container">
-        <button type="button" class="button" id="limparFiltro" >Limpiar filtro</button>
-      </section>
+        <section class="container">
+          <button type="button" class="button" id="limparFiltro">Limpiar filtro</button>
+        </section>
 
-      <section>
-      <label class="label" for="Destacada">Filtrar por:</label>
-      <select class="menuFiltro"  id="filterInformacion">
-      <option id="peliculasRecientes">Peliculas Recientes</option>
-      <option id="DirectoresMasPeliculas">Directores de mas Peliculas</option>
-      <option id="peliculas+de90">Peliculas mas de 90 minutos</option>
-      <option id="peliculas-de90">Peliculas menos de 90 minutos</option>
-      </select>
-      </section>
+        <section class="menuDirectores">
+          <label class="label" for="Destacada">Elija un director:</label>
+          <select class="menuFiltro" id="filterInformacion">
+            <option value=" " id="vacio"> </option>
+            <option value="Hayao Miyazaki" id="hayao">Hayao Miyazaki</option>
+            <option value="Isao Takahata" id="isao">Isao Takahata</option>
+            <option value="Yoshifumi Kondō" id="yoshifumi">Yoshifumi Kondō</option>
+            <option value="Hiroyuki Morita" id="hiroyuki">Hiroyuki Morita</option>
+            <option value="Gorō Miyazaki" id="goro">Gorō Miyazaki</option>
+            <option value="Hiromasa Yonebayashi" id="hiromasa">Hiromasa Yonebayashi</option>
+          </select>
+          <button type="button" class="button" id="botonBuscarDirector"> Buscar </button>
+        </section>
 
-    </div>
+      </div>
 
-    <div>
-      <section class="contenedorLista" id="listaPeliculas">
-      </section>
-    </div>
+      <div>
+        <section class="contenedorLista" id="listaPeliculas">
+        </section>
+      </div>
 
-  </main>
+    </main>
 
-  <footer class="container">
-    <button type="button" class="button" id="botonIrArriba" >Ir arriba</button>
-  </footer>
+    <footer class="container">
+      <button type="button" class="button" id="botonIrArriba">Ir arriba</button>
+    </footer>
 
-</form>
+  </form>
 
 
 

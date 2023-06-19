@@ -1,4 +1,4 @@
-import { obtenerPeliculas, filtrarDirectores,filtrarTitulo} from './data.js';
+import { obtenerPeliculas, filtrarDirectores, filtrarTitulo } from './data.js';
 
 const dataFilms = obtenerPeliculas();
 
@@ -199,6 +199,17 @@ buscadorInput.addEventListener("keyup", function () {
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(tituloFiltrado);
   console.log(tituloFiltrado)
+})
+
+//Filtros Directores//
+const botonBuscarDirectores = document.getElementById("botonBuscarDirector");
+const directorHayao = document.getElementById("hayao"); 
+
+botonBuscarDirectores.addEventListener("click", function () { 
+  const directorFiltradoHayao = filtrarDirectores(dataFilms, directorHayao.value);
+  // document.getElementById('listaPeliculas').innerHTML = '';
+  // animacionesTarjeta(directorFiltradoHayao);
+  console.log(directorFiltradoHayao)
 })
 
 //Botón limpiar filtro //
