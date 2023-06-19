@@ -1,4 +1,4 @@
-import { obtenerPeliculas, filtrarDirectores, filtrarTitulo } from './data.js';
+import { obtenerPeliculas, filtrarDirectores, filtrarTitulo, filtrarAño } from './data.js';
 
 const dataFilms = obtenerPeliculas();
 
@@ -8,7 +8,6 @@ const listaPeliculas = document.getElementById("listaPeliculas");
 //Categorías//
 const animacionesBtn = document.getElementById("animaciones")//Botón TODAS las animaciones
 const directoresBtn = document.getElementById("directores")//Botón directores
-const duracionBtn = document.getElementById("duracion"); //Botón duración
 const añoBtn = document.getElementById("año"); //Botón año
 
 //FILTRAR POR CATEGORIA//
@@ -94,48 +93,6 @@ añoBtn.addEventListener("click", () => {
   categoriaAño(dataFilms)
 });
 
-function categoriaDuracion(films) {
-
-  for (let i = 0; i < films.length; i++) {
-
-    const contenedorTarjetas = document.createElement("div")
-    contenedorTarjetas.classList.add("container")
-    listaPeliculas.appendChild(contenedorTarjetas)
-
-    const tarjeta = document.createElement("section")
-    tarjeta.classList.add("contenedorTarjeta")
-    contenedorTarjetas.appendChild(tarjeta)
-
-    const contenedorImagen = document.createElement("section")
-    contenedorImagen.classList.add("contenedorImagen")
-    tarjeta.appendChild(contenedorImagen)
-
-    const imagen = document.createElement("img")
-    imagen.src = films[i].poster
-    contenedorImagen.appendChild(imagen)
-
-    const contenedorTexto = document.createElement("section")
-    contenedorTexto.classList.add("contenedorTexto")
-    tarjeta.appendChild(contenedorTexto)
-
-    const nombre = document.createElement("h2")
-    nombre.innerText = films[i].title;
-    contenedorTexto.appendChild(nombre)
-    const duracion = document.createElement("p");
-    duracion.innerText = "Duración: " + films[i].rt_score + " minutos";
-    contenedorTexto.appendChild(duracion)
-
-    contenedorTexto.appendChild(nombre)
-    contenedorTexto.appendChild(duracion)
-  }
-}
-//categoriaDuracion (dataFilms);
-duracionBtn.addEventListener("click", () => {
-  document.getElementById('listaPeliculas').innerHTML = '';
-  categoriaDuracion(dataFilms)
-});
-
-
 //CREAR TARJETAS DE TODAS LAS ANIMACIONES//
 const animacionesTarjeta = function (films) {
 
@@ -203,13 +160,28 @@ buscadorInput.addEventListener("keyup", function () {
 
 //Filtros Directores//
 const botonBuscarDirectores = document.getElementById("botonBuscarDirector");
-const directorHayao = document.getElementById("hayao"); 
 
-botonBuscarDirectores.addEventListener("click", function () { 
-  const directorFiltradoHayao = filtrarDirectores(dataFilms, directorHayao.value);
-  // document.getElementById('listaPeliculas').innerHTML = '';
-  // animacionesTarjeta(directorFiltradoHayao);
-  console.log(directorFiltradoHayao)
+//VALORES DE MENÚ DESPLEGABLE//
+// const directorHayao = document.getElementById("hayao");
+// const directorIsao = document.getElementById("isao");
+// const directorYoshifumi = document.getElementById("yoshifumi");
+// const directorHiroyuki = document.getElementById("hiroyuki");
+// const directorGoro = document.getElementById("goro");
+// const directorHiromasa = document.getElementById("hiromasa");
+
+//para que el menú detecte el cambio de opción//
+let directorSeleccionado = "";
+const menuDirectoresFiltro = document.getElementById("menuFiltroDirectores");
+menuDirectoresFiltro.addEventListener("change", function (e) {
+  directorSeleccionado = e.target.value;
+})
+
+//Botón//
+botonBuscarDirectores.addEventListener("click", function () {
+  const directorFiltrado = filtrarDirectores(dataFilms, directorSeleccionado);
+  document.getElementById('listaPeliculas').innerHTML = '';
+  animacionesTarjeta(directorFiltrado);
+  console.log(directorFiltrado)
 })
 
 //Botón limpiar filtro //
@@ -221,5 +193,9 @@ limpiarBtn.addEventListener("click", () => {
 });
 
 //Botón Ir arriba//
-const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
-console.log(arribaBtn)
+// const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
+// console.log(arribaBtn)
+
+
+
+
