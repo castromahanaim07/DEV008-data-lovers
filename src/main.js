@@ -1,4 +1,4 @@
-import { obtenerPeliculas, filtrarDirectores, filtrarTitulo, filtrarAño } from './data.js';
+import { obtenerPeliculas, obtenerAño, filtrarDirectores, filtrarTitulo, filtrarMasRecientes, filtrarRecientes, filtrarMenosRecientes } from './data.js';
 
 const dataFilms = obtenerPeliculas();
 
@@ -130,15 +130,11 @@ const animacionesTarjeta = function (films) {
     const año = document.createElement("p")
     año.innerText = "Año de lanzamiento: " + films[i].release_date;
     contenedorTexto.appendChild(año)
-    const duracion = document.createElement("p")
-    duracion.innerText = "Duración: " + films[i].rt_score + " minutos";
-    contenedorTexto.appendChild(duracion)
 
     contenedorTexto.appendChild(nombre)
     contenedorTexto.appendChild(director)
     contenedorTexto.appendChild(productor)
     contenedorTexto.appendChild(año)
-    contenedorTexto.appendChild(duracion)
   }
 }
 animacionesTarjeta(dataFilms);
@@ -175,7 +171,6 @@ const menuDirectoresFiltro = document.getElementById("menuFiltroDirectores");
 menuDirectoresFiltro.addEventListener("change", function (e) {
   directorSeleccionado = e.target.value;
 })
-
 //Botón//
 botonBuscarDirectores.addEventListener("click", function () {
   const directorFiltrado = filtrarDirectores(dataFilms, directorSeleccionado);
@@ -183,6 +178,21 @@ botonBuscarDirectores.addEventListener("click", function () {
   animacionesTarjeta(directorFiltrado);
   console.log(directorFiltrado)
 })
+
+//para que el menú2 detecte el cambio de opción//
+let opcionSeleccionada= "";
+const menuFiltros = document.getElementById("menuFiltrosDesplegable");
+menuFiltros.addEventListener("change", function (e) {
+  opcionSeleccionada = e.target.value;
+  console.log(e)
+})
+menuFiltros.addEventListener("click", function () {
+  const opcioFiltrada = filtrarDirectores(dataFilms, opcionSeleccionada);
+  document.getElementById('listaPeliculas').innerHTML = '';
+  animacionesTarjeta(opcioFiltrada);
+})
+
+
 
 //Botón limpiar filtro //
 const limpiarBtn = document.getElementById("limparFiltro");
@@ -195,6 +205,19 @@ limpiarBtn.addEventListener("click", () => {
 //Botón Ir arriba//
 // const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
 // console.log(arribaBtn)
+
+//Filtros por año/antiüedad//
+console.log(filtrarMasRecientes(dataFilms))
+console.log(filtrarRecientes(dataFilms))
+console.log(filtrarMenosRecientes(dataFilms))
+
+//PRUEBAS filtrar año + sort//
+//console.log ( filtrarAño (dataFilms, 1986))//Funciona para años específicos
+//console.log(añoFilms(dataFilms))//Me devuelve solo uno//
+// const dataAño = dataFilms.forEach(element => console.log(element.release_date));//funciona//
+
+
+
 
 
 
