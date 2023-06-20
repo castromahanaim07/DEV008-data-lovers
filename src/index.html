@@ -8,7 +8,7 @@
 
 </head>
 
-<body>
+<body class="body">
   <form class="contenedorPagina">
 
     <header class="header">
@@ -32,41 +32,57 @@
         <section class="container">
           <button type="button" class="button" id="limparFiltro">Limpiar filtro</button>
         </section>
+
+      </div>
+      <div>
+        <section class="menusDesplegables">
+          <label class="label" for="menuDesplegable">Elija un director:</label>
+          <select class="menuFiltro" id="menuFiltroDirectores">
+            <option value=" " id="vacioDirectores"> </option>
+            <option value="Hayao Miyazaki" id="hayao">Hayao Miyazaki</option>
+            <option value="Isao Takahata" id="isao">Isao Takahata</option>
+            <option value="Yoshifumi Kondō" id="yoshifumi">Yoshifumi Kondō</option>
+            <option value="Hiroyuki Morita" id="hiroyuki">Hiroyuki Morita</option>
+            <option value="Gorō Miyazaki" id="goro">Gorō Miyazaki</option>
+            <option value="Hiromasa Yonebayashi" id="hiromasa">Hiromasa Yonebayashi</option>
+          </select>
+          <button type="button" class="button" id="botonBuscarDirector"> Buscar </button>
       </div>
 
-      <div id="header">
-        <ul class="nav">  
-          <li><a href="">Popularidad</a>
+      <section class="menuDesplegable">
+        <ul value="menuMultiopcion" class="nav"  id="menuFiltrosDesplegable">
+          <li><a value="Directores" id="menuDirectores"href="">Directores</a>
             <ul>
-              <li><a href="">Hayao Miyazaki</a></li>
-              <li><a href="">Isao Takahata</a></li>
-              <li><a href="">Yoshifumi Kondō</a></li>
-              <li><a href="">Hiroyuki Morita</a></li>
-              <li><a href="">Gorō Miyazaki</a></li>
-              <li><a href="">Hiromasa Yonebayashi</a></li>
-              </li>
-            </ul>
-          </li>
-          <li><a href="">Antiguedad</a>
-            <ul>
-              <li><a href="">2000's</a></li>
-              <li><a href="">1990's</a></li>
-              <li><a href="">1980's</a></li>
-            </ul>
-          </li>
-          <li><a href="">Popularidad</a>
-            <ul>
-              <li><a href="">Mas polulares</a></li>
-              <li><a href="">Menos polulares</a></li>
-              </li>
-            </ul>
+              <li><a value="Hayao Miyazaki" id="hayao" href="">Hayao Miyazaki</a></li>
+              <li><a value="Isao Takahata" id="isao" href="">Isao Takahata</a></li>
+              <li><a value="Yoshifumi Kondō" id="yoshifumi" href="">Yoshifumi Kondō</a></li>
+              <li><a value="Hiroyuki Morita" id="hiroyuki" href="">Hiroyuki Morita</a></li>
+              <li><a value="Gorō Miyazaki" id="goro" href="">Gorō Miyazaki</a></li>
+              <li><a value="Hiromasa Yonebayashi" id="hiromasa" href="">Hiromasa Yonebayashi</a></li>
           </li>
         </ul>
+        </li>
+        <li><a value="Año" id="menuAño" href="">Año</a>
+          <ul>
+            <li><a value="2000's" id="2000" href="">2000's</a></li>
+            <li><a value="1990's" id="1990" href="">1990's</a></li>
+            <li><a value="1980's" id="1980" href="">1980's</a></li>
+          </ul>
+        </li>
+        <li><a value="Popularidad" id="menuPopularidad" href="">Popularidad</a>
+          <ul>
+            <li><a value="Mas polulares" id="masPopulares" href="">Mas polulares</a></li>
+            <li><a value="Menos polulares" id="menosPopulares"href="">Menos polulares</a></li>
+        </li>
+        </ul>
+        </li>
+        </ul>
+      </section>
+      
+      <div>
+        <section class="contenedorLista" id="listaPeliculas">
+        </section>
       </div>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          <section class="contenedorLista" id="listaPeliculas">
-          </section>
-        </div>
 
     </main>
 
