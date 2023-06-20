@@ -171,7 +171,6 @@ const menuDirectoresFiltro = document.getElementById("menuFiltroDirectores");
 menuDirectoresFiltro.addEventListener("change", function (e) {
   directorSeleccionado = e.target.value;
 })
-
 //Botón//
 botonBuscarDirectores.addEventListener("click", function () {
   const directorFiltrado = filtrarDirectores(dataFilms, directorSeleccionado);
@@ -179,6 +178,21 @@ botonBuscarDirectores.addEventListener("click", function () {
   animacionesTarjeta(directorFiltrado);
   console.log(directorFiltrado)
 })
+
+//para que el menú2 detecte el cambio de opción//
+let opcionSeleccionada= "";
+const menuFiltros = document.getElementById("menuFiltrosDesplegable");
+menuFiltros.addEventListener("change", function (e) {
+  opcionSeleccionada = e.target.value;
+  console.log(e)
+})
+menuFiltros.addEventListener("click", function () {
+  const opcioFiltrada = filtrarDirectores(dataFilms, opcionSeleccionada);
+  document.getElementById('listaPeliculas').innerHTML = '';
+  animacionesTarjeta(opcioFiltrada);
+})
+
+
 
 //Botón limpiar filtro //
 const limpiarBtn = document.getElementById("limparFiltro");
