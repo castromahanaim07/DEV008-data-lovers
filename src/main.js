@@ -1,4 +1,4 @@
-import { obtenerPeliculas, filtrarDirectores, filtrarTitulo } from './data.js';
+import { obtenerPeliculas, filtrarDirectores, filtrarTitulo, filtrarPopulares } from './data.js';
 
 const dataFilms = obtenerPeliculas();
 
@@ -198,19 +198,26 @@ buscadorInput.addEventListener("keyup", function () {
   const tituloFiltrado = filtrarTitulo(dataFilms, textoIntroducido)
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(tituloFiltrado);
-  console.log(tituloFiltrado)
+  //console.log(tituloFiltrado)
 })
 
 //Filtros Directores//
-const botonBuscarDirectores = document.getElementById("botonBuscarDirector");
-const directorHayao = document.getElementById("hayao"); 
+//const botonBuscarDirectores = document.getElementById("botonBuscarDirector");
+//const directorHayao = document.getElementById("hayao"); 
 
-botonBuscarDirectores.addEventListener("click", function () { 
-  const directorFiltradoHayao = filtrarDirectores(dataFilms, directorHayao.value);
+//botonBuscarDirectores.addEventListener("click", function () { 
+  //const directorFiltradoHayao = filtrarDirectores(dataFilms, directorHayao.value);
   // document.getElementById('listaPeliculas').innerHTML = '';
   // animacionesTarjeta(directorFiltradoHayao);
-  console.log(directorFiltradoHayao)
+  //console.log(directorFiltradoHayao)
+//})
+//filtrar por popularidad
+Popularidad.addEventListener("click", function () { 
+  const popularFiltrada = filtrarPopulares(dataFilms,rt_score.value);
+  document.getElementById('listaPeliculas').innerHTML = '';
+  animacionesTarjeta(filtrarPopulares);
 })
+
 
 //Botón limpiar filtro //
 const limpiarBtn = document.getElementById("limparFiltro");
@@ -222,4 +229,4 @@ limpiarBtn.addEventListener("click", () => {
 
 //Botón Ir arriba//
 const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
-console.log(arribaBtn)
+//console.log(arribaBtn)
