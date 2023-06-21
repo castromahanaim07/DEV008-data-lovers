@@ -4,7 +4,13 @@ export function obtenerPeliculas() {
   return data.films;
 }
 export function obtenerAño(films) {
-  return films.release_date;
+  const añosObtenidos = films.map(film => Number(film.release_date))
+  return añosObtenidos;
+}
+
+export function obtenerPopularidad(films) {
+  const popularidadObtenida = films.map(film => Number(film.rt_score))
+  return popularidadObtenida;
 }
 
 export function filtrarDirectores(films, director) {
@@ -32,12 +38,12 @@ export function filtrarMenosRecientes(films) {
   return filtroRecientes;
 }
 
-export function filtrarMasPopulares (films) {
+export function filtrarMasPopulares(films) {
   const filtroMasPopulares = films.filter(film => film.rt_score >= 90)
   return filtroMasPopulares;
 }
 
-export function filtrarMenosPopulares (films) {
+export function filtrarMenosPopulares(films) {
   const filtroMenosPopulares = films.filter(film => film.rt_score >= 0 && film.rt_score < 90)
   return filtroMenosPopulares;
 }

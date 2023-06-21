@@ -1,4 +1,4 @@
-import { obtenerPeliculas, filtrarDirectores, filtrarTitulo, filtrarMasRecientes, filtrarRecientes, filtrarMenosRecientes, filtrarMasPopulares, filtrarMenosPopulares } from './data.js';
+import { obtenerPeliculas, obtenerAño, obtenerPopularidad, filtrarDirectores, filtrarTitulo, filtrarMasRecientes, filtrarRecientes, filtrarMenosRecientes, filtrarMasPopulares, filtrarMenosPopulares } from './data.js';
 
 const dataFilms = obtenerPeliculas();
 
@@ -231,48 +231,13 @@ limpiarBtn.addEventListener("click", () => {
 // const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
 // console.log(arribaBtn)
 
-///// Menú 2 /////
-// const filtroHayao = document.getElementById("hayaoFiltro");
-// const filtroIsao = document.getElementById("isaoFiltro");
-// const filtroYoshifumi = document.getElementById("yoshifumiFiltro");
-// const filtroHiroyuki = document.getElementById("hiroyukiFiltro");
-// const filtroGoro = document.getElementById("goroFiltro");
-// const filtroHiromasa = document.getElementById("hiromasaFiltro");
-
-
-///// PRUEBA 1/////
-// filtroHayao.addEventListener("click", function () {
-//   const filtroDirectorHayao = filtrarDirectores(dataFilms, "Hayao Miyazaki");
-//   document.getElementById('listaPeliculas').innerHTML = '';
-//   animacionesTarjeta(filtroDirectorHayao);
-//   console.log(filtroDirectorHayao)
-// })
-
-/////PRUEBA 2/////
-// function seleccionarHayao() {
-//   const filtroDirectorHayao = filtrarDirectores(dataFilms, "Hayao Miyazaki");
-//   document.getElementById('listaPeliculas').innerHTML = '';
-//   animacionesTarjeta(filtroDirectorHayao);
-//   console.log(filtroDirectorHayao)
-// }
-
-// document.getElementById("hayaoFiltro").onclick = function () {
-//   seleccionarHayao(filtrarMasRecientes(dataFilms));
-// }
-
-/////PRUEBA 3/////
-// document.getElementById("hayaoFiltro").onclick = function () {
-//   const filtroDirectorHayao = filtrarDirectores(dataFilms, "Hayao Miyazaki");
-//   document.getElementById('listaPeliculas').innerHTML = '';
-//   animacionesTarjeta(filtroDirectorHayao);
-//   console.log(filtroDirectorHayao)
-// }
-
-
-
-
 //PRUEBAS filtrar año + sort//
 //console.log ( filtrarAño (dataFilms, 1986))//Funciona para años específicos
 //console.log(añoFilms(dataFilms))//Me devuelve solo uno//
 // const dataAño = dataFilms.forEach(element => console.log(element.release_date));//funciona//
 
+const dataAño = obtenerAño(dataFilms);
+console.log(dataAño)
+
+const dataPopularidad = obtenerPopularidad(dataFilms);
+console.log(dataPopularidad)
