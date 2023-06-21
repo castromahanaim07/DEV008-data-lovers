@@ -32,3 +32,13 @@ export function filtrarMenosRecientes(films) {
   return filtroRecientes;
 }
 
+export function filtrarMasPopulares (films) {
+  const filtroMasPopulares = films.filter(film => film.rt_score >= 90)
+  return filtroMasPopulares;
+}
+
+export function filtrarMenosPopulares (films) {
+  const filtroMenosPopulares = films.filter(film => film.rt_score >= 0 && film.rt_score < 90)
+  return filtroMenosPopulares;
+}
+

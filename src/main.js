@@ -1,4 +1,4 @@
-import { obtenerPeliculas, obtenerAño, filtrarDirectores, filtrarTitulo, filtrarMasRecientes, filtrarRecientes, filtrarMenosRecientes } from './data.js';
+import { obtenerPeliculas, filtrarDirectores, filtrarTitulo, filtrarMasRecientes, filtrarRecientes, filtrarMenosRecientes, filtrarMasPopulares, filtrarMenosPopulares } from './data.js';
 
 const dataFilms = obtenerPeliculas();
 
@@ -6,9 +6,9 @@ const dataFilms = obtenerPeliculas();
 const listaPeliculas = document.getElementById("listaPeliculas");
 
 //Categorías//
-const animacionesBtn = document.getElementById("animaciones")//Botón TODAS las animaciones
-const directoresBtn = document.getElementById("directores")//Botón directores
-const añoBtn = document.getElementById("año"); //Botón año
+const animacionesBtn = document.getElementById("animaciones")
+const directoresBtn = document.getElementById("directores")
+const añoBtn = document.getElementById("año");
 
 //FILTRAR POR CATEGORIA//
 function categoriaDirectores(films) {
@@ -130,11 +130,15 @@ const animacionesTarjeta = function (films) {
     const año = document.createElement("p")
     año.innerText = "Año de lanzamiento: " + films[i].release_date;
     contenedorTexto.appendChild(año)
+    const score = document.createElement("p")
+    score.innerText = "Popularidad: " + films[i].rt_score + " puntos";
+    contenedorTexto.appendChild(score)
 
     contenedorTexto.appendChild(nombre)
     contenedorTexto.appendChild(director)
     contenedorTexto.appendChild(productor)
     contenedorTexto.appendChild(año)
+    contenedorTexto.appendChild(score)
   }
 }
 animacionesTarjeta(dataFilms);
@@ -143,8 +147,8 @@ animacionesBtn.addEventListener("click", () => {
   animacionesTarjeta(dataFilms);
 });
 
-//Header//
-const buscadorInput = document.getElementById("textInput"); //Buscador
+//Buscador//
+const buscadorInput = document.getElementById("textInput"); 
 
 buscadorInput.addEventListener("keyup", function () {
   const textoIntroducido = buscadorInput.value;
@@ -154,48 +158,69 @@ buscadorInput.addEventListener("keyup", function () {
   console.log(tituloFiltrado)
 })
 
-//Filtros Directores//
-const botonBuscarDirectores = document.getElementById("botonBuscarDirector");
-
-//VALORES DE MENÚ DESPLEGABLE//
-// const directorHayao = document.getElementById("hayao");
-// const directorIsao = document.getElementById("isao");
-// const directorYoshifumi = document.getElementById("yoshifumi");
-// const directorHiroyuki = document.getElementById("hiroyuki");
-// const directorGoro = document.getElementById("goro");
-// const directorHiromasa = document.getElementById("hiromasa");
-
-//para que el menú detecte el cambio de opción//
+//Menu de filtros//
 let directorSeleccionado = "";
-const menuDirectoresFiltro = document.getElementById("menuFiltroDirectores");
-menuDirectoresFiltro.addEventListener("change", function (e) {
+const seleccionadoDirector = document.getElementById("directorOpcion");
+seleccionadoDirector.addEventListener("change", function (e) {
   directorSeleccionado = e.target.value;
+  console.log(directorSeleccionado)
 })
-//Botón//
-botonBuscarDirectores.addEventListener("click", function () {
-  const directorFiltrado = filtrarDirectores(dataFilms, directorSeleccionado);
+seleccionadoDirector.addEventListener("click", function () {
+  let directorFiltrado = [];
+  if (directorSeleccionado === "Director") {
+    directorFiltrado = dataFilms
+  } else {
+    directorFiltrado = filtrarDirectores(dataFilms, directorSeleccionado)
+  }
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(directorFiltrado);
   console.log(directorFiltrado)
 })
 
-//para que el menú2 detecte el cambio de opción//
-let opcionSeleccionada= "";
-const menuFiltros = document.getElementById("menuFiltrosDesplegable");
-menuFiltros.addEventListener("change", function (e) {
-  opcionSeleccionada = e.target.value;
-  console.log(e)
+// //Filtros Año//
+let añoSeleccionado = "";
+const seleccionadoAño = document.getElementById("añoOpcion");
+seleccionadoAño.addEventListener("change", function (e) {
+  añoSeleccionado = e.target.value;
+  console.log(añoSeleccionado)
 })
-menuFiltros.addEventListener("click", function () {
-  const opcioFiltrada = filtrarDirectores(dataFilms, opcionSeleccionada);
+
+seleccionadoAño.addEventListener("click", function () {
+  let añoSeleccionadoFiltro = [];
+  if (añoSeleccionado === "2000's") {
+    añoSeleccionadoFiltro = filtrarMasRecientes(dataFilms)
+  } else if (añoSeleccionado === "1990's") {
+    añoSeleccionadoFiltro = filtrarRecientes(dataFilms)
+  } else if (añoSeleccionado === "1980's") {
+    añoSeleccionadoFiltro = filtrarMenosRecientes(dataFilms)
+  } else {añoSeleccionadoFiltro = dataFilms}
   document.getElementById('listaPeliculas').innerHTML = '';
-  animacionesTarjeta(opcioFiltrada);
+  animacionesTarjeta(añoSeleccionadoFiltro);
+  console.log(añoSeleccionadoFiltro)
 })
 
+// //Filtros Popularidad//
+let popularSeleccionado = "";
+const seleccionadoPopular = document.getElementById("popularidadOpcion");
+seleccionadoPopular.addEventListener("change", function (e) {
+  popularSeleccionado = e.target.value;
+  console.log(popularSeleccionado);
+})
+seleccionadoPopular.addEventListener("click", function () {
+  let popularSeleccionadoFiltro = [];
+  if (popularSeleccionado === "Más populares") {
+    popularSeleccionadoFiltro = filtrarMasPopulares(dataFilms);
+  } else if (popularSeleccionado === "Menos populares") {
+    popularSeleccionadoFiltro = filtrarMenosPopulares(dataFilms);
+  } else { popularSeleccionadoFiltro = dataFilms }
+  document.getElementById('listaPeliculas').innerHTML = '';
+  animacionesTarjeta(popularSeleccionadoFiltro);
+  console.log(popularSeleccionadoFiltro)
 
+})
 
-//Botón limpiar filtro //
-const limpiarBtn = document.getElementById("limparFiltro");
+// Botón limpiar filtro //
+const limpiarBtn = document.getElementById("limpiarFiltro");
 
 limpiarBtn.addEventListener("click", () => {
   document.getElementById('listaPeliculas').innerHTML = '';
@@ -206,19 +231,48 @@ limpiarBtn.addEventListener("click", () => {
 // const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
 // console.log(arribaBtn)
 
-//Filtros por año/antiüedad//
-console.log(filtrarMasRecientes(dataFilms))
-console.log(filtrarRecientes(dataFilms))
-console.log(filtrarMenosRecientes(dataFilms))
+///// Menú 2 /////
+// const filtroHayao = document.getElementById("hayaoFiltro");
+// const filtroIsao = document.getElementById("isaoFiltro");
+// const filtroYoshifumi = document.getElementById("yoshifumiFiltro");
+// const filtroHiroyuki = document.getElementById("hiroyukiFiltro");
+// const filtroGoro = document.getElementById("goroFiltro");
+// const filtroHiromasa = document.getElementById("hiromasaFiltro");
+
+
+///// PRUEBA 1/////
+// filtroHayao.addEventListener("click", function () {
+//   const filtroDirectorHayao = filtrarDirectores(dataFilms, "Hayao Miyazaki");
+//   document.getElementById('listaPeliculas').innerHTML = '';
+//   animacionesTarjeta(filtroDirectorHayao);
+//   console.log(filtroDirectorHayao)
+// })
+
+/////PRUEBA 2/////
+// function seleccionarHayao() {
+//   const filtroDirectorHayao = filtrarDirectores(dataFilms, "Hayao Miyazaki");
+//   document.getElementById('listaPeliculas').innerHTML = '';
+//   animacionesTarjeta(filtroDirectorHayao);
+//   console.log(filtroDirectorHayao)
+// }
+
+// document.getElementById("hayaoFiltro").onclick = function () {
+//   seleccionarHayao(filtrarMasRecientes(dataFilms));
+// }
+
+/////PRUEBA 3/////
+// document.getElementById("hayaoFiltro").onclick = function () {
+//   const filtroDirectorHayao = filtrarDirectores(dataFilms, "Hayao Miyazaki");
+//   document.getElementById('listaPeliculas').innerHTML = '';
+//   animacionesTarjeta(filtroDirectorHayao);
+//   console.log(filtroDirectorHayao)
+// }
+
+
+
 
 //PRUEBAS filtrar año + sort//
 //console.log ( filtrarAño (dataFilms, 1986))//Funciona para años específicos
 //console.log(añoFilms(dataFilms))//Me devuelve solo uno//
 // const dataAño = dataFilms.forEach(element => console.log(element.release_date));//funciona//
-
-
-
-
-
-
 
