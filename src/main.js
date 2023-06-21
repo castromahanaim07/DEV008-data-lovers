@@ -231,13 +231,24 @@ limpiarBtn.addEventListener("click", () => {
 // const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
 // console.log(arribaBtn)
 
-//PRUEBAS filtrar año + sort//
-//console.log ( filtrarAño (dataFilms, 1986))//Funciona para años específicos
-//console.log(añoFilms(dataFilms))//Me devuelve solo uno//
-// const dataAño = dataFilms.forEach(element => console.log(element.release_date));//funciona//
+//PRUEBAS filtrar año + sort///FUNCIONAN///
 
 const dataAño = obtenerAño(dataFilms);
 console.log(dataAño)
 
 const dataPopularidad = obtenerPopularidad(dataFilms);
 console.log(dataPopularidad)
+
+const ordenarMasRecientes = dataAño.sort((a,b) => b - a)
+console.log(ordenarMasRecientes);
+
+const ordenarMenosRecientes = dataAño.sort((a,b) => a - b)
+console.log(ordenarMenosRecientes);
+
+const ordenarMasPopulares = dataPopularidad.sort((a,b) => b - a)
+console.log(ordenarMasPopulares);
+
+const ordenarMenosPopulares = dataPopularidad.sort((a,b) => a - b)
+console.log(ordenarMenosPopulares);
+
+/////CREAR BUSCADOR EN HTML Y LIGARLO CON JAVASCRIPT/////
