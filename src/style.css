@@ -124,7 +124,7 @@ button:hover {
   font-family: Candara;
   font-size: 25px;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: .5s;
   margin: 15px;
