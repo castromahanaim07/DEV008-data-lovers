@@ -148,7 +148,7 @@ animacionesBtn.addEventListener("click", () => {
 });
 
 //Buscador//
-const buscadorInput = document.getElementById("textInput"); 
+const buscadorInput = document.getElementById("textInput");
 
 buscadorInput.addEventListener("keyup", function () {
   const textoIntroducido = buscadorInput.value;
@@ -193,7 +193,7 @@ seleccionadoAño.addEventListener("click", function () {
     añoSeleccionadoFiltro = filtrarRecientes(dataFilms)
   } else if (añoSeleccionado === "1980's") {
     añoSeleccionadoFiltro = filtrarMenosRecientes(dataFilms)
-  } else {añoSeleccionadoFiltro = dataFilms}
+  } else { añoSeleccionadoFiltro = dataFilms }
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(añoSeleccionadoFiltro);
   console.log(añoSeleccionadoFiltro)
@@ -230,25 +230,3 @@ limpiarBtn.addEventListener("click", () => {
 //Botón Ir arriba//
 // const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
 // console.log(arribaBtn)
-
-//PRUEBAS filtrar año + sort///FUNCIONAN///
-
-const dataAño = obtenerAño(dataFilms);
-console.log(dataAño)
-
-const dataPopularidad = obtenerPopularidad(dataFilms);
-console.log(dataPopularidad)
-
-const ordenarMasRecientes = dataAño.sort((a,b) => b - a)
-console.log(ordenarMasRecientes);
-
-const ordenarMenosRecientes = dataAño.sort((a,b) => a - b)
-console.log(ordenarMenosRecientes);
-
-const ordenarMasPopulares = dataPopularidad.sort((a,b) => b - a)
-console.log(ordenarMasPopulares);
-
-const ordenarMenosPopulares = dataPopularidad.sort((a,b) => a - b)
-console.log(ordenarMenosPopulares);
-
-/////CREAR BUSCADOR EN HTML Y LIGARLO CON JAVASCRIPT/////

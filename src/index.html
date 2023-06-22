@@ -31,7 +31,7 @@
 
       </div>
 
-      <div>
+      <div class="menusDesplegablesContenedor">
         <section class="menusDesplegable">
           <label class="label" for="directorOpcion">Filtrar por:</label>
           <select class="menuFiltro" name="directorOpcion" id="directorOpcion">
@@ -55,7 +55,18 @@
             <option value="Menos populares" id="menosPopulares">Menos populares</option>
           </select>
         </section>
+        <section class="menusDesplegable">
+          <label class="label" for="menuOrdenar">Ordenar por:</label>
+          <select class="menuFiltro" name="menuOrdenar" id="menuOrdenar">
+            <option value="Más recientes" id="ordenarMasRecientes" selected>Más recientes</option>
+            <option value="Menos recientes" id="ordenarMenosRecientes">Menos recientes</option>
+            <option value="Más populares" id="ordenarMasPopulares">Más populares</option>
+            <option value="Menos populares" id="ordenarMenosPopulares">Menos populares</option>
+          </select>
+        </section>
+  
       </div>
+
       <section class="container">
         <button type="button" class="button" id="limpiarFiltro">Limpiar filtro</button>
       </section>

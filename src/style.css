@@ -167,43 +167,10 @@ button:hover {
   color: #555353;
   font-size: 25px;
 }
-
-ul, ol {
-  list-style:none;
-}
-
-.nav > li {
-  float:left;
-}
-
-.nav li a {
-
-  background-color:#ADDFD3;
-  color:#fff;
-  text-decoration:none;
-  padding:20px 12px;
-  display:block;
-}
-
-.nav li a:hover {
-  background-color:#F1A19F;
-}
-
-.nav li ul {
-  display:none;
-  position:absolute;
-  min-width:160px;
-}
-
-.nav li:hover > ul {
-  display:block;
-}
-
-.nav li ul li {
-  position:relative;
-}
-
-.nav li ul li ul {
-  right:-140px;
-  top:0px;
+.menusDesplegablesContenedor{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
