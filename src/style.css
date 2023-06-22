@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   margin: 10px;
+  padding: 40px;
 }
 
 .logo{
@@ -44,6 +45,8 @@
   background-color: #ADDFD3;
   min-width: 100vh;
   height: 123px;
+  padding: 40px;
+
 }
 
 .input {
@@ -87,6 +90,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center
+  
 }
 
 .btn {
@@ -119,6 +123,7 @@ button:hover {
   margin: 20px;
   overflow: hidden;
   transition: all 0.25s;
+  flex-flow: wrap;
  
 }
 
@@ -129,6 +134,7 @@ button:hover {
   justify-content: center;
   width: 260px;
   height: 363px;
+  
 }
 
 .contenedorImagen:hover {
@@ -179,43 +185,15 @@ button:hover {
     font-size: 25px;
     font-family: Candara;
   }
+  @media screen and(max-width: 700px) {
+    .contenedorLista
+    .menuFiltro:hover
+    .button{
+      max-width: 4000px;
+      padding: 0 50px;
+    }
+    
+  }
+  @media screen and (max-width: 1020px) {
 
-ul, ol {
-  list-style:none;
-}
-
-.nav > li {
-  float:left;
-}
-
-.nav li a {
-
-  background-color:#ADDFD3;
-  color:#fff;
-  text-decoration:none;
-  padding:20px 12px;
-  display:block;
-}
-
-.nav li a:hover {
-  background-color:#F1A19F;
-}
-
-.nav li ul {
-  display:none;
-  position:absolute;
-  min-width:160px;
-}
-
-.nav li:hover > ul {
-  display:block;
-}
-
-.nav li ul li {
-  position:relative;
-}
-
-.nav li ul li ul {
-  right:-140px;
-  top:0px;
-}
+  }

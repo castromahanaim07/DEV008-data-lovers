@@ -191,6 +191,14 @@ menuFiltros.addEventListener("click", function () {
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(opcioFiltrada);
 })
+//let li = menuFiltros.getElementById("listaPeliculas");
+
+//function menuFiltros(){
+   //for(let i=0; i<li.length; i++){
+    //li[i].addEventListener("listaPeliculas",function(){
+    //});
+  //}
+   //}
 
 
 
