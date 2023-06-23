@@ -228,8 +228,8 @@ limpiarBtn.addEventListener("click", () => {
 });
 
 //Botón Ir arriba//
-// const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
-// console.log(arribaBtn)
+const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
+arribaBtn.addEventListener("click", () => window.scrollBy(0, -8200))
 
 //PRUEBAS filtrar año + sort/// NO FUNCIONA MENU///
 
@@ -260,7 +260,7 @@ menuOrdenar.addEventListener("click", function () {
     opcionOrdenar = ordenarMenosRecientes;
   } else if (opcionSeleccionadaOrdenar === "Más populares") {
     opcionOrdenar = ordenarMasPopulares;
-  }else if (opcionSeleccionadaOrdenar === "Menos populares"){
+  } else if (opcionSeleccionadaOrdenar === "Menos populares") {
     opcionOrdenar = ordenarMenosPopulares;
   }
   document.getElementById('listaPeliculas').innerHTML = '';
