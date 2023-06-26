@@ -229,7 +229,11 @@ limpiarBtn.addEventListener("click", () => {
 
 //Botón Ir arriba//
 const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
-arribaBtn.addEventListener("click", () => window.scrollBy(0, -8200))
+arribaBtn.addEventListener("click", () => {
+  window.scrollBy(0, -8200)
+  console.log("hola")
+});
+
 
 //PRUEBAS filtrar año + sort/// NO FUNCIONA MENU///
 
