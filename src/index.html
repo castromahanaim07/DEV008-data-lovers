@@ -19,26 +19,14 @@
     </header>
 
     <nav class="searchContainer">
-      <input type="text" placeholder="Buscador" class="input" id="textInput"></input>
+      <input type="text" placeholder="Buscador por título" class="input" id="textInput" />
     </nav>
-
     <main class="container">
-      <div class="categoriesContainer">
-
-        <button type="button" class="btn" id="animaciones">Animaciones</button>
-        <button type="button" class="btn" id="directores">Directores</button>
-        <button type="button" class="btn" id="año">Año</button>
-
-        <section class="container">
-          <button type="button" class="button" id="limparFiltro">Limpiar filtro</button>
-        </section>
-
-      </div>
-      <div>
-        <section class="menusDesplegables">
-          <label class="label" for="menuDesplegable">Elija un director:</label>
-          <select class="menuFiltro" id="menuFiltroDirectores">
-            <option value=" " id="vacioDirectores"> </option>
+      <div class="menusDesplegablesContenedor">
+        <section class="menusDesplegable">
+          <label class="label" for="directorOpcion">Filtrar por:</label>
+          <select class="menuFiltro" name="directorOpcion" id="directorOpcion">
+            <option value="Director" id="directoresFiltroMenu" selected>Director</option>
             <option value="Hayao Miyazaki" id="hayao">Hayao Miyazaki</option>
             <option value="Isao Takahata" id="isao">Isao Takahata</option>
             <option value="Yoshifumi Kondō" id="yoshifumi">Yoshifumi Kondō</option>
@@ -46,49 +34,54 @@
             <option value="Gorō Miyazaki" id="goro">Gorō Miyazaki</option>
             <option value="Hiromasa Yonebayashi" id="hiromasa">Hiromasa Yonebayashi</option>
           </select>
-          <button type="button" class="button" id="botonBuscarDirector"> Buscar </button>
-      </div>
-
-      <section class="menuDesplegable">
-        <ul value="menuMultiopcion" class="nav"  id="menuFiltrosDesplegable">
-          <li><a value="Directores" id="menuDirectores"href="">Directores</a>
-            <ul>
-              <li><a value="Hayao Miyazaki" id="hayao" href="">Hayao Miyazaki</a></li>
-              <li><a value="Isao Takahata" id="isao" href="">Isao Takahata</a></li>
-              <li><a value="Yoshifumi Kondō" id="yoshifumi" href="">Yoshifumi Kondō</a></li>
-              <li><a value="Hiroyuki Morita" id="hiroyuki" href="">Hiroyuki Morita</a></li>
-              <li><a value="Gorō Miyazaki" id="goro" href="">Gorō Miyazaki</a></li>
-              <li><a value="Hiromasa Yonebayashi" id="hiromasa" href="">Hiromasa Yonebayashi</a></li>
-          </li>
-        </ul>
-        </li>
-        <li><a value="Año" id="menuAño" href="">Año</a>
-          <ul>
-            <li><a value="2000's" id="2000" href="">2000's</a></li>
-            <li><a value="1990's" id="1990" href="">1990's</a></li>
-            <li><a value="1980's" id="1980" href="">1980's</a></li>
-          </ul>
-        </li>
-        <li><a value="Popularidad" id="menuPopularidad" href="">Popularidad</a>
-          <ul>
-            <li><a value="Mas polulares" id="masPopulares" href="">Mas polulares</a></li>
-            <li><a value="Menos polulares" id="menosPopulares"href="">Menos polulares</a></li>
-        </li>
-        </ul>
-        </li>
-        </ul>
-      </section>
-      
-      <div>
-        <section class="contenedorLista" id="listaPeliculas">
+          <select class="menuFiltro" name="añoOpcion" id="añoOpcion">
+            <option value="Año" id="añoFiltroMenu" selected>Año</option>
+            <option value="2000's" id="masRecientes">2000's</option>
+            <option value="1990's" id="recientes">1990's</option>
+            <option value="1980's" id="menosRecientes">1980's</option>
+          </select>
+          <select class="menuFiltro" name="popularidadOpcion" id="popularidadOpcion">
+            <option value="Popularidad" id="popularidadFiltroMenu" selected>Popularidad</option>
+            <option value="Más populares" id="masPopulares">Más populares</option>
+            <option value="Menos populares" id="menosPopulares">Menos populares</option>
+          </select>
+        </section>
+        <section>
+          <label class="label" for="menuOrdenar">Ordenar por:</label>
+          <select class="menuFiltro" name="menuOrdenar" id="menuOrdenar">
+            <option value="Más recientes" id="ordenarMasRecientes" selected>Más recientes</option>
+            <option value="Menos recientes" id="ordenarMenosRecientes">Menos recientes</option>
+            <option value="Más populares" id="ordenarMasPopulares">Más populares</option>
+            <option value="Menos populares" id="ordenarMenosPopulares">Menos populares</option>
+          </select>
         </section>
       </div>
 
+
+      <h3 class="subSubtitle"> C A T E G O R I A S </h3>
+      <section class="categoriesContainer">
+        <button type="button" class="btn" id="animaciones">Animaciones</button>
+        <button type="button" class="btn" id="directores">Directores</button>
+        <button type="button" class="btn" id="año">Año</button>
+      </section>
+
+      <section class="container">
+        <button type="button" class="button" id="limpiarFiltro">Limpiar filtro</button>
+      </section>
+
+      <div>
+        <section class="contenedorLista" id="listaPeliculas">
+        </section>
+
+      </div>
+
+      <footer class="arribaBoton">
+        <button type="button" class="button" id="botonIrArriba" style="position: fixed;">🡹</button>
+      </footer>
+
     </main>
 
-    <footer class="container">
-      <button type="button" class="button" id="botonIrArriba">Ir arriba</button>
-    </footer>
+
 
   </form>
 
