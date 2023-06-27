@@ -211,8 +211,8 @@ seleccionadoPopular.addEventListener("click", function () {
   animacionesTarjeta(popularSeleccionadoFiltro);
 })
 
-// Botón limpiar filtro //
-const limpiarBtn = document.getElementById("limpiarFiltro");
+//Botón limpiar filtro //
+const limpiarBtn = document.getElementById("limparFiltro");
 
 limpiarBtn.addEventListener("click", () => {
   document.getElementById('listaPeliculas').innerHTML = '';
