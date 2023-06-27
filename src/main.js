@@ -155,7 +155,6 @@ buscadorInput.addEventListener("keyup", function () {
   const tituloFiltrado = filtrarTitulo(dataFilms, textoIntroducido)
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(tituloFiltrado);
-  console.log(tituloFiltrado)
 })
 
 //Menu de filtros//
@@ -163,7 +162,6 @@ let directorSeleccionado = "";
 const seleccionadoDirector = document.getElementById("directorOpcion");
 seleccionadoDirector.addEventListener("change", function (e) {
   directorSeleccionado = e.target.value;
-  console.log(directorSeleccionado)
 })
 seleccionadoDirector.addEventListener("click", function () {
   let directorFiltrado = [];
@@ -174,7 +172,6 @@ seleccionadoDirector.addEventListener("click", function () {
   }
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(directorFiltrado);
-  console.log(directorFiltrado)
 })
 
 // //Filtros Año//
@@ -182,7 +179,6 @@ let añoSeleccionado = "";
 const seleccionadoAño = document.getElementById("añoOpcion");
 seleccionadoAño.addEventListener("change", function (e) {
   añoSeleccionado = e.target.value;
-  console.log(añoSeleccionado)
 })
 
 seleccionadoAño.addEventListener("click", function () {
@@ -196,7 +192,6 @@ seleccionadoAño.addEventListener("click", function () {
   } else { añoSeleccionadoFiltro = dataFilms }
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(añoSeleccionadoFiltro);
-  console.log(añoSeleccionadoFiltro)
 })
 
 // //Filtros Popularidad//
@@ -204,7 +199,6 @@ let popularSeleccionado = "";
 const seleccionadoPopular = document.getElementById("popularidadOpcion");
 seleccionadoPopular.addEventListener("change", function (e) {
   popularSeleccionado = e.target.value;
-  console.log(popularSeleccionado);
 })
 seleccionadoPopular.addEventListener("click", function () {
   let popularSeleccionadoFiltro = [];
@@ -215,8 +209,6 @@ seleccionadoPopular.addEventListener("click", function () {
   } else { popularSeleccionadoFiltro = dataFilms }
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(popularSeleccionadoFiltro);
-  console.log(popularSeleccionadoFiltro)
-
 })
 
 // Botón limpiar filtro //
@@ -227,33 +219,19 @@ limpiarBtn.addEventListener("click", () => {
   animacionesTarjeta(dataFilms);
 });
 
-//Botón Ir arriba//
-const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
-arribaBtn.addEventListener("click", () => {
-  window.scrollBy(0, -8200)
-  console.log("hola")
-});
-
-
 //PRUEBAS filtrar año + sort/// NO FUNCIONA MENU///
-
 const ordenarMasRecientes = dataFilms.toSorted((a, b) => b.release_date - a.release_date)
-console.log(ordenarMasRecientes);
 
 const ordenarMenosRecientes = dataFilms.toSorted((a, b) => a.release_date - b.release_date)
-console.log(ordenarMenosRecientes);
 
 const ordenarMasPopulares = dataFilms.toSorted((a, b) => b.rt_score - a.rt_score)
-console.log(ordenarMasPopulares);
 
 const ordenarMenosPopulares = dataFilms.toSorted((a, b) => a.rt_score - b.rt_score)
-console.log(ordenarMenosPopulares);
 
 let opcionSeleccionadaOrdenar = "";
 const menuOrdenar = document.getElementById("menuOrdenar");
 menuOrdenar.addEventListener("change", function (e) {
   opcionSeleccionadaOrdenar = e.target.value;
-  console.log(opcionSeleccionadaOrdenar);
 })
 
 menuOrdenar.addEventListener("click", function () {
@@ -269,5 +247,4 @@ menuOrdenar.addEventListener("click", function () {
   }
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(opcionOrdenar);
-  console.log(opcionOrdenar)
 })
