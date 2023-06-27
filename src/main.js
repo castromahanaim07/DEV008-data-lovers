@@ -212,7 +212,7 @@ seleccionadoPopular.addEventListener("click", function () {
 })
 
 //Botón limpiar filtro //
-const limpiarBtn = document.getElementById("limparFiltro");
+const limpiarBtn = document.getElementById("limpiarFiltro");
 
 limpiarBtn.addEventListener("click", () => {
   document.getElementById('listaPeliculas').innerHTML = '';
