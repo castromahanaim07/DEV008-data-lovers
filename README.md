@@ -35,7 +35,6 @@ Las opciones para _ordenar_ son; Por las más populares, las menos populares, la
 Nos guiamos de  la [investigación con seguidores de las animaciones del Studio Ghibli](https://github.com/KimRv000/DEV008-data-lovers/blob/main/src/data/ghibli/README.md) y en el feedback de nuestro primer prototipo para crear las historias de usuario.
 
 Finalmente nuestra página cuenta con los elementos necesarios para que las historias de usuario se cumplan.
-// AL FINAL MENCIONAR COMO SE RESUELVEN //
 
 ## 4. Pruebas Unitarias
 
