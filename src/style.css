@@ -174,3 +174,10 @@ button:hover {
   padding: 5%;
 }
 
+.arribaBoton {
+  display: flex;
+  justify-content: right;
+  align-items:flex-end;
+  margin-left: 800px;
+  position:sticky;
+}

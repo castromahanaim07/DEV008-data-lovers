@@ -228,21 +228,21 @@ limpiarBtn.addEventListener("click", () => {
 });
 
 //Botón Ir arriba//
-// const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
-// console.log(arribaBtn)
+const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
+arribaBtn.addEventListener("click", () => window.scrollBy(0, -8200))
 
 //PRUEBAS filtrar año + sort/// NO FUNCIONA MENU///
 
-const ordenarMasRecientes = dataFilms.sort((a, b) => b.release_date - a.release_date)
+const ordenarMasRecientes = dataFilms.toSorted((a, b) => b.release_date - a.release_date)
 console.log(ordenarMasRecientes);
 
-const ordenarMenosRecientes = dataFilms.sort((a, b) => a.release_date - b.release_date)
+const ordenarMenosRecientes = dataFilms.toSorted((a, b) => a.release_date - b.release_date)
 console.log(ordenarMenosRecientes);
 
-const ordenarMasPopulares = dataFilms.sort((a, b) => b.rt_score - a.rt_score)
+const ordenarMasPopulares = dataFilms.toSorted((a, b) => b.rt_score - a.rt_score)
 console.log(ordenarMasPopulares);
 
-const ordenarMenosPopulares = dataFilms.sort((a, b) => a.rt_score - b.rt_score)
+const ordenarMenosPopulares = dataFilms.toSorted((a, b) => a.rt_score - b.rt_score)
 console.log(ordenarMenosPopulares);
 
 let opcionSeleccionadaOrdenar = "";
@@ -260,7 +260,7 @@ menuOrdenar.addEventListener("click", function () {
     opcionOrdenar = ordenarMenosRecientes;
   } else if (opcionSeleccionadaOrdenar === "Más populares") {
     opcionOrdenar = ordenarMasPopulares;
-  }else if (opcionSeleccionadaOrdenar === "Menos populares"){
+  } else if (opcionSeleccionadaOrdenar === "Menos populares") {
     opcionOrdenar = ordenarMenosPopulares;
   }
   document.getElementById('listaPeliculas').innerHTML = '';
