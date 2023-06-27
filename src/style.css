@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   margin: 10px;
+  padding: 0 5rem;
 }
 
 .logo{
@@ -38,12 +39,14 @@
 
 .searchContainer {
   display: flex;
+  max-width: 80rem;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: #ADDFD3;
   min-width: 100%;
   height: 123px;
+  padding-top: 4rem;
 }
 .menusDesplegablesContenedor{
   display: flex;
@@ -143,13 +146,9 @@ button:hover {
   width: 962px;
   height: 393px;
   margin: 20px;
-  overflow: hidden;
-  transition: all 0.25s;
- 
 }
 
 .contenedorImagen {
-  transform: translate(15px);
   display: flex;
   justify-content: center;
   width: 260px;
@@ -170,4 +169,24 @@ button:hover {
   width: 705px;
   height: 393px;
   padding: 5%;
+}
+.btn-up {
+  width: 50px;
+  height: 50px;
+  outline: 0;
+  border-radius: 50%;
+  border: 1px solid   #F1A19F;
+  background-color:  #F1A19F;
+  position: fixed;
+  right: 20px;
+  left: 90%;
+  bottom: 20px;
+  transition: all 3s ease-in-out;
+}
+.fa-arrow-up{
+  color: #ffffff;
+  font-size: 20px;
+}
+.btn-up :hover {
+  opacity: .75;
 }

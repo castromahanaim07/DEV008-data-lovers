@@ -155,7 +155,7 @@ buscadorInput.addEventListener("keyup", function () {
   const tituloFiltrado = filtrarTitulo(dataFilms, textoIntroducido)
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(tituloFiltrado);
-  console.log(tituloFiltrado)
+  //console.log(tituloFiltrado)
 })
 
 //Menu de filtros//
@@ -219,21 +219,13 @@ seleccionadoPopular.addEventListener("click", function () {
 
 })
 
-// Botón limpiar filtro //
-const limpiarBtn = document.getElementById("limpiarFiltro");
+//Botón limpiar filtro //
+const limpiarBtn = document.getElementById("limparFiltro");
 
 limpiarBtn.addEventListener("click", () => {
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(dataFilms);
 });
-
-//Botón Ir arriba//
-const arribaBtn = document.getElementById("botonIrArriba"); //Agregar evento//
-arribaBtn.addEventListener("click", () => {
-  window.scrollBy(0, -8200)
-  console.log("hola")
-});
-
 
 //PRUEBAS filtrar año + sort/// NO FUNCIONA MENU///
 
