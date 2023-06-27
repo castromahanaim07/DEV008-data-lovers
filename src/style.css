@@ -140,6 +140,8 @@ button:hover {
 }
 
 .contenedorTarjeta {
+  
+  transform: translate(15px);
   display: flex;
   width: 962px;
   height: 393px;
