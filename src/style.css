@@ -127,7 +127,7 @@ button:hover {
   font-family: Candara;
   font-size: 25px;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: .5s;
   margin: 15px;
@@ -140,21 +140,13 @@ button:hover {
 }
 
 .contenedorTarjeta {
-  
-  transform: translate(15px);
-  box-shadow: 0 12px 16px rgba (0, 0, 0, 0.2);
   display: flex;
   width: 962px;
   height: 393px;
   margin: 20px;
-  overflow: hidden;
-  transition: all 0.25s;
- 
 }
 
 .contenedorImagen {
-  transform: translate(15px);
-  box-shadow: 0 12px 16px rgba (0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   width: 260px;
@@ -176,10 +168,6 @@ button:hover {
   height: 393px;
   padding: 5%;
 }
-.fa-solid-fa-arrow-up {
-  font-size: 30px;
-  color:black;
-}
 .btn-up {
   width: 50px;
   height: 50px;
@@ -194,10 +182,9 @@ button:hover {
   transition: all 3s ease-in-out;
 }
 .fa-arrow-up{
-  color: #DBC4B6;
+  color: #ffffff;
   font-size: 20px;
 }
 .btn-up :hover {
   opacity: .75;
 }
-

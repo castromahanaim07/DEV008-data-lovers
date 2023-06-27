@@ -3,15 +3,6 @@ import data from './data/ghibli/ghibli.js';
 export function obtenerPeliculas() {
   return data.films;
 }
-export function obtenerAño(films) {
-  const añosObtenidos = films.map(film => Number(film.release_date))
-  return añosObtenidos;
-}
-
-export function obtenerPopularidad(films) {
-  const popularidadObtenida = films.map(film => Number(film.rt_score))
-  return popularidadObtenida;
-}
 
 export function filtrarDirectores(films, director) {
   const filtroDirector = films.filter(film => film.director === director)
@@ -47,4 +38,3 @@ export function filtrarMenosPopulares(films) {
   const filtroMenosPopulares = films.filter(film => film.rt_score >= 0 && film.rt_score < 90)
   return filtroMenosPopulares;
 }
-
