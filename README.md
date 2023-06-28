@@ -11,7 +11,7 @@
 
 ## 1. Introducción
 
-Ésta página web está pensada para poder obtener información a partir de data de [Estudios Ghibli](https://www.ghibli.jp/) y mostrarla a los usuarios mediante una interfaz sencilla, con colores suaves, sencilla de visualizar y de usar.
+Ésta página web está pensada para poder obtener información a partir de data de [Estudios Ghibli](https://www.ghibli.jp/) y mostrarla a los usuarios mediante una interfaz sencilla pero bien estructurada, con colores pastel, contenido inmediato de las animaciones a visualizar y de usar.
 
 ## 2. Diseño de interfaz
 
@@ -21,7 +21,7 @@ Trás mostrar nuestra idea en una demo y recibir feedback, decidimos modificar l
 
 Conforme avanzamos ibamos encontrando detalles que se podían mejorar, por lo que fuimos modificando nuestra idea sin perder la base del nuevo prototipo. 
 
-Después de trabajar en la funcionalidad de la página tomando en cuenta lo que queríamos mostrar tomando en cuenta nuestras historias de usuario modificamos nuestro diseño. Por lo que tuvimos como resultado el diseño final de nuestro proyecto.
+Después de trabajar en la funcionalidad de la página tomando en cuenta lo que queríamos mostrar de a cuerdo a nuestras historias de usuario modificamos nuestro diseño. Por lo que tuvimos como resultado el diseño final de nuestro proyecto.
 
 Nuestra aplicación web se muestra en una sola página, es responsive y sigue un desplazamiento vertical para visualizar las tarjetas de información.
 
