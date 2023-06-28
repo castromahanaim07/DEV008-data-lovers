@@ -161,9 +161,8 @@ buscadorInput.addEventListener("keyup", function () {
 let directorSeleccionado = "";
 const seleccionadoDirector = document.getElementById("directorOpcion");
 seleccionadoDirector.addEventListener("change", function (e) {
+
   directorSeleccionado = e.target.value;
-})
-seleccionadoDirector.addEventListener("click", function () {
   let directorFiltrado = [];
   if (directorSeleccionado === "Director") {
     directorFiltrado = dataFilms
@@ -173,15 +172,15 @@ seleccionadoDirector.addEventListener("click", function () {
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(directorFiltrado);
 })
+seleccionadoDirector.addEventListener("click", function () {
+  
+})
 
 // //Filtros Año//
 let añoSeleccionado = "";
 const seleccionadoAño = document.getElementById("añoOpcion");
 seleccionadoAño.addEventListener("change", function (e) {
   añoSeleccionado = e.target.value;
-})
-
-seleccionadoAño.addEventListener("click", function () {
   let añoSeleccionadoFiltro = [];
   if (añoSeleccionado === "2000's") {
     añoSeleccionadoFiltro = filtrarMasRecientes(dataFilms)
@@ -194,13 +193,14 @@ seleccionadoAño.addEventListener("click", function () {
   animacionesTarjeta(añoSeleccionadoFiltro);
 })
 
+//seleccionadoAño.addEventListener("click", function () {
+//})
+
 // //Filtros Popularidad//
 let popularSeleccionado = "";
 const seleccionadoPopular = document.getElementById("popularidadOpcion");
 seleccionadoPopular.addEventListener("change", function (e) {
   popularSeleccionado = e.target.value;
-})
-seleccionadoPopular.addEventListener("click", function () {
   let popularSeleccionadoFiltro = [];
   if (popularSeleccionado === "Más populares") {
     popularSeleccionadoFiltro = filtrarMasPopulares(dataFilms);
@@ -210,6 +210,9 @@ seleccionadoPopular.addEventListener("click", function () {
   document.getElementById('listaPeliculas').innerHTML = '';
   animacionesTarjeta(popularSeleccionadoFiltro);
 })
+//seleccionadoPopular.addEventListener("click", function () {
+  
+//})
 
 //Botón limpiar filtro //
 const limpiarBtn = document.getElementById("limpiarFiltro");
@@ -219,7 +222,7 @@ limpiarBtn.addEventListener("click", () => {
   animacionesTarjeta(dataFilms);
 });
 
-//PRUEBAS filtrar año + sort/// NO FUNCIONA MENU///
+//PRUEBAS filtrar año + tosorted/// ///
 const ordenarMasRecientes = dataFilms.toSorted((a, b) => b.release_date - a.release_date)
 
 const ordenarMenosRecientes = dataFilms.toSorted((a, b) => a.release_date - b.release_date)
